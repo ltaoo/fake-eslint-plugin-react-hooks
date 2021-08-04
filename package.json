@@ -1,0 +1,16 @@
+{
+  "name": "eslint-plugin-extra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "father-build --watch",
+    "build": "father-build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "father-build": "^1.19.6"
+  }
+}
