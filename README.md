@@ -73,7 +73,7 @@ useEffect(() => {
 ```
 
 这些都没有从根本上解决这个问题，即支持指定某些 `hooks` 是「安全」、「稳定」的，就好像 `useState` 返回值中的 `setter`。
-幸运的是已经有人提出并正在开发，可见 https://github.com/facebook/react/issues/20205，但不幸的是这个进度不是很理想。
+幸运的是已经有人[提出并正在开发](https://github.com/facebook/react/issues/20205)，但不幸的是这个进度不是很理想。
 
 基于这些原因，本项目产生了，它支持自定义 `safeHooks`
 
