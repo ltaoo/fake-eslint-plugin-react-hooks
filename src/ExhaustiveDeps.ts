@@ -4,6 +4,13 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import { Rule, Scope } from "eslint";
+import * as ESTree from "estree";
+
+interface ProcessedOptions {
+  additionalHooks?: RegExp;
+  enableDangerousAutofixThisMayCauseInfiniteLoops: boolean;
+}
 
 export default {
   meta: {
@@ -21,6 +28,7 @@ export default {
         type: "object",
         additionalProperties: false,
         enableDangerousAutofixThisMayCauseInfiniteLoops: false,
+        safeHooks: false,
         properties: {
           additionalHooks: {
             type: "string",
@@ -28,11 +36,14 @@ export default {
           enableDangerousAutofixThisMayCauseInfiniteLoops: {
             type: "boolean",
           },
+          safeHooks: {
+            type: "array",
+          },
         },
       },
     ],
   },
-  create(context) {
+  create(context: Rule.RuleContext) {
     // Parse the `additionalHooks` regex.
     const additionalHooks =
       context.options &&
@@ -46,13 +57,16 @@ export default {
         context.options[0] &&
         context.options[0].enableDangerousAutofixThisMayCauseInfiniteLoops) ||
       false;
+    const extraSafeHooks = (context.options &&
+        context.options[0] &&
+        context.options[0].safeHooks) || [];
 
-    const options = {
+    const options: ProcessedOptions = {
       additionalHooks,
       enableDangerousAutofixThisMayCauseInfiniteLoops,
     };
 
-    function reportProblem(problem) {
+    function reportProblem(problem: Rule.ReportDescriptor) {
       if (enableDangerousAutofixThisMayCauseInfiniteLoops) {
         // Used to enable legacy behavior. Dangerous.
         // Keep this as an option until major IDEs upgrade (including VSCode FB ESLint extension).
@@ -63,25 +77,17 @@ export default {
       context.report(problem);
     }
 
-    // const sourceCode = context.getSourceCode();
-    // 这个 sourceCode 是对文件的解析，包含了 tokens、ast？ 等的一个非常大的对象
-    // console.log('[0]sourceCode', sourceCode);
-
     const scopeManager = context.getSourceCode().scopeManager;
-    // 这个就更看不懂了，看语义是作用域的管理器？能够通过该对象处理作用域相关的东西？
-    // console.log('[1]scopeManager', scopeManager);
 
     // Should be shared between visitors.
     const setStateCallSites = new WeakMap();
     const stateVariables = new WeakSet();
-    // 缓存好的不变的值
     const stableKnownValueCache = new WeakMap();
     const functionWithoutCapturedValueCache = new WeakMap();
     function memoizeWithWeakMap(fn, map) {
       return function (arg) {
         if (map.has(arg)) {
           // to verify cache hits:
-          // console.log(arg.name)
           return map.get(arg);
         }
         const result = fn(arg);
@@ -93,11 +99,11 @@ export default {
      * Visitor for both function expressions and arrow function expressions.
      */
     function visitFunctionWithDependencies(
-      node,
-      declaredDependenciesNode,
-      reactiveHook,
-      reactiveHookName,
-      isEffect
+      node: ESTree.ArrowFunctionExpression | ESTree.FunctionExpression,
+      declaredDependenciesNode: ESTree.Expression | ESTree.SpreadElement,
+      reactiveHook: ESTree.MemberExpression | ESTree.Identifier,
+      reactiveHookName: string,
+      isEffect: boolean
     ) {
       if (isEffect && node.async) {
         reportProblem({
@@ -118,9 +124,7 @@ export default {
       }
 
       // Get the current scope.
-      // console.log('get scope', node);
       const scope = scopeManager.acquire(node);
-      // console.log('after get scope', scope);
 
       // Find all our "pure scopes". On every re-render of a component these
       // pure scopes may have changes to the variables declared within. So all
@@ -163,9 +167,7 @@ export default {
       // const ref = useRef()
       //       ^^^ true for this reference
       // False for everything else.
-      function isStableKnownHookValue(resolved) {
-        console.log("[isStableKnownHookValue]", resolved.name);
-        console.log(resolved.defs);
+      function isStableKnownHookValue(resolved: Scope.Variable) {
         if (!isArray(resolved.defs)) {
           return false;
         }
@@ -173,17 +175,17 @@ export default {
         if (def == null) {
           return false;
         }
-        // console.log(resolved.defs[0]);
         // Look for `let stuff = ...`
-        console.log(def.node.type);
         if (def.node.type !== "VariableDeclarator") {
           return false;
         }
-        let init = def.node.init;
+        let init = (def.node as ESTree.VariableDeclarator).init;
         if (init == null) {
           return false;
         }
+        // @ts-ignore
         while (init.type === "TSAsExpression") {
+          // @ts-ignore
           init = init.expression;
         }
         // Detect primitive constants
@@ -214,28 +216,78 @@ export default {
         if (init.type !== "CallExpression") {
           return false;
         }
-        let callee = init.callee;
+        let callee = init.callee as ESTree.MemberExpression | ESTree.Identifier;
         // Step into `= React.something` initializer.
         if (
           callee.type === "MemberExpression" &&
-          callee.object.name === "React" &&
           callee.property != null &&
           !callee.computed
         ) {
+          //  force callee as ESTree.Identifier
+          // @ts-ignore
           callee = callee.property;
         }
         if (callee.type !== "Identifier") {
           return false;
         }
+        // const dispatch = useDispatch();
+        // dispatch is id, useDispatch is callee
         const id = def.node.id;
         const { name } = callee;
-        if (
-          ["useDispatch", "useModalVisible", "useVisible", "useForm"].includes(
-            name
-          )
-        ) {
-          return true;
+        function groupSafeHooks(safeHooks) {
+          return safeHooks
+            .filter((safeHook) => {
+              const [hookName] = safeHook;
+              return typeof hookName === "string";
+            })
+            .map((safeHook) => {
+              const [hookName, ...extraOptions] = safeHook;
+              return {
+                [hookName]: {
+                  stable: extraOptions.length === 0,
+                  stableIdentifiers: extraOptions,
+                },
+              };
+            })
+            .reduce((total, cur) => {
+              return { ...total, ...cur };
+            }, {});
         }
+        const groupedSafeHooks = groupSafeHooks(extraSafeHooks);
+        // console.log('check stable', name);
+        if (groupedSafeHooks[name]) {
+          const { stable, stableIdentifiers } = groupedSafeHooks[name];
+          if (stable) {
+            return true;
+          }
+          if (id.type === "ArrayPattern" && isArray(resolved.identifiers)) {
+            const { identifiers } = resolved;
+            const identifier = identifiers[0];
+            for (let i = 0; i < stableIdentifiers.length; i += 1) {
+              const stableIdentifier = stableIdentifiers[i];
+              console.log(id.elements[stableIdentifier]?.name, identifier.name);
+              if (id.elements[stableIdentifier]?.name === identifier.name) {
+                return true;
+              }
+            }
+          }
+          if (id.type === "ObjectPattern" && isArray(resolved.identifiers)) {
+            const { identifiers } = resolved;
+            const identifier = identifiers[0];
+            for (let i = 0; i < stableIdentifiers.length; i += 1) {
+              const matched = id.properties.find((property) => {
+                const needCheckIsStable = stableIdentifiers.find((name) => [property.key.name, property.value.name].includes(name));
+                if (needCheckIsStable) {
+                  return [property.key.name, property.value.name].includes(identifier.name);
+                }
+              });
+              if (matched) {
+                return true;
+              }
+            }
+          }
+        }
+        // console.log('resolved identifiers', resolved.identifiers);
         if (name === "useRef" && id.type === "Identifier") {
           // useRef() return value is stable.
           return true;
@@ -383,13 +435,14 @@ export default {
       const optionalChains = new Map();
       gatherDependenciesRecursively(scope);
 
-      function gatherDependenciesRecursively(currentScope) {
+      function gatherDependenciesRecursively(currentScope: Scope.Scope) {
         for (const reference of currentScope.references) {
           // If this reference is not resolved or it is not declared in a pure
           // scope then we don't care about this reference.
           if (!reference.resolved) {
             continue;
           }
+          // @ts-ignore
           if (!pureScopes.has(reference.resolved.scope)) {
             continue;
           }
@@ -401,6 +454,8 @@ export default {
             reference.identifier
           );
           const dependencyNode = getDependency(referenceNode);
+          // dependencyNode === reference.identifier
+          // console.log(reference.identifier.name, dependencyNode);
           const dependency = analyzePropertyChain(
             dependencyNode,
             optionalChains
@@ -438,10 +493,12 @@ export default {
             continue;
           }
           // Ignore references to the function itself as it's not defined yet.
+          // @ts-ignore
           if (def.node != null && def.node.init === node.parent) {
             continue;
           }
           // Ignore Flow type parameters
+          // @ts-ignore
           if (def.type === "TypeParameter") {
             continue;
           }
@@ -470,9 +527,6 @@ export default {
       // Warn about accessing .current in cleanup effects.
       currentRefsInEffectCleanup.forEach(
         ({ reference, dependencyNode }, dependency) => {
-          console.log("[forEach currentRefsInEffectCleanup]", reference);
-          console.log(dependencyNode);
-          console.log(dependency);
           const references = reference.resolved.references;
           // Is React managing this ref or us?
           // Let's see if we can find a .current assignment.
@@ -524,17 +578,18 @@ export default {
           node: writeExpr,
           message:
             `Assignments to the '${key}' variable from inside React Hook ` +
+            // @ts-ignore
             `${context.getSource(reactiveHook)} will be lost after each ` +
             `render. To preserve the value over time, store it in a useRef ` +
             `Hook and keep the mutable value in the '.current' property. ` +
             `Otherwise, you can move this variable directly inside ` +
+            // @ts-ignore
             `${context.getSource(reactiveHook)}.`,
         });
       }
 
       // Remember which deps are stable and report bad usage first.
       const stableDependencies = new Set();
-      console.log("[dependencies]");
       dependencies.forEach(({ isStable, references }, key) => {
         // console.log(key, references);
         if (isStable) {
@@ -625,6 +680,7 @@ export default {
         reportProblem({
           node: declaredDependenciesNode,
           message:
+            // @ts-ignore
             `React Hook ${context.getSource(reactiveHook)} was passed a ` +
             "dependency list that is not an array literal. This means we " +
             "can't statically verify whether you've passed the correct " +
@@ -641,6 +697,7 @@ export default {
             reportProblem({
               node: declaredDependencyNode,
               message:
+                // @ts-ignore
                 `React Hook ${context.getSource(reactiveHook)} has a spread ` +
                 "element in its dependency array. This means we can't " +
                 "statically verify whether you've passed the " +
@@ -679,6 +736,7 @@ export default {
                 reportProblem({
                   node: declaredDependencyNode,
                   message:
+                    // @ts-ignore
                     `React Hook ${context.getSource(reactiveHook)} has a ` +
                     `complex expression in the dependency array. ` +
                     "Extract it to a separate variable so it can be statically checked.",
@@ -695,9 +753,11 @@ export default {
           console.log("[declaredDependencyNode]", maybeID);
           while (
             maybeID.type === "MemberExpression" ||
+            // @ts-ignore
             maybeID.type === "OptionalMemberExpression" ||
             maybeID.type === "ChainExpression"
           ) {
+            // @ts-ignore
             maybeID = maybeID.object || maybeID.expression.object;
           }
           const isDeclaredInComponent = !componentScope.through.some(
@@ -820,7 +880,6 @@ export default {
       // in some extra deduplication. We can't do this
       // for effects though because those have legit
       // use cases for over-specifying deps.
-      // console.log('[report missing Dependencies]', missingDependencies);
       if (!isEffect && missingDependencies.size > 0) {
         suggestedDeps = collectRecommendations({
           dependencies,
@@ -904,6 +963,7 @@ export default {
           const dep = Array.from(externalDependencies)[0];
           // Don't show this warning for things that likely just got moved *inside* the callback
           // because in that case they're clearly not referring to globals.
+          // @ts-ignore
           if (!scope.set.has(dep)) {
             extraWarning =
               ` Outer scope values like '${dep}' aren't valid dependencies ` +
@@ -935,6 +995,7 @@ export default {
             isPropsOnlyUsedInMembers = false;
             break;
           }
+          // @ts-ignore
           const parent = id.parent;
           if (parent == null) {
             isPropsOnlyUsedInMembers = false;
@@ -953,6 +1014,7 @@ export default {
             ` However, 'props' will change when *any* prop changes, so the ` +
             `preferred fix is to destructure the 'props' object outside of ` +
             `the ${reactiveHookName} call and refer to those specific props ` +
+            // @ts-ignore
             `inside ${context.getSource(reactiveHook)}.`;
         }
       }
@@ -1103,6 +1165,7 @@ export default {
       reportProblem({
         node: declaredDependenciesNode,
         message:
+          // @ts-ignore
           `React Hook ${context.getSource(reactiveHook)} has ` +
           // To avoid a long message, show the next actionable item.
           (getWarningMessage(missingDependencies, "a", "missing", "include") ||
@@ -1136,17 +1199,21 @@ export default {
       });
     }
 
-    function visitCallExpression(node) {
-      console.log("[0]", visitCallExpression);
-      const callbackIndex = getReactiveHookCallbackIndex(node.callee, options);
-      if (callbackIndex === -1) {
+    function visitCallExpression(node: ESTree.CallExpression) {
+      const callbackIndex = getReactiveHookCallbackIndex(
+        node.callee as ESTree.MemberExpression | ESTree.Identifier,
+        options
+      );
+      const notReactHookOrCustomHookNeedCheckDeps = callbackIndex === -1;
+      if (notReactHookOrCustomHookNeedCheckDeps) {
         // Not a React Hook call that needs deps.
         return;
       }
       const callback = node.arguments[callbackIndex];
-      const reactiveHook = node.callee;
+      const reactiveHook = node.callee as
+        | ESTree.MemberExpression
+        | ESTree.Identifier;
       const reactiveHookName = getNodeWithoutReactNamespace(reactiveHook).name;
-      console.log("the hooks need check deps", reactiveHookName);
       const declaredDependenciesNode = node.arguments[callbackIndex + 1];
       const isEffect = /Effect($|[^a-z])/g.test(reactiveHookName);
 
@@ -1166,7 +1233,8 @@ export default {
       // Check the declared dependencies for this reactive hook. If there is no
       // second argument then the reactive callback will re-run on every render.
       // So no need to check for dependency inclusion.
-      if (!declaredDependenciesNode && !isEffect) {
+      const mustHasDeps = !declaredDependenciesNode && !isEffect;
+      if (mustHasDeps) {
         // These are only used for optimization.
         if (
           reactiveHookName === "useMemo" ||
@@ -1203,8 +1271,8 @@ export default {
           // The function passed as a callback is not written inline.
           // But perhaps it's in the dependencies array?
           if (
-            declaredDependenciesNode.elements &&
-            declaredDependenciesNode.elements.some(
+            (declaredDependenciesNode as ESTree.ArrayExpression).elements &&
+            (declaredDependenciesNode as ESTree.ArrayExpression).elements.some(
               (el) =>
                 el && el.type === "Identifier" && el.name === callback.name
             )
@@ -1234,6 +1302,8 @@ export default {
             case "FunctionDeclaration":
               // useEffect(() => { ... }, []);
               visitFunctionWithDependencies(
+                // @todo 不太可能出现 FunctionDeclaration
+                // @ts-ignore
                 def.node,
                 declaredDependenciesNode,
                 reactiveHook,
@@ -1309,13 +1379,6 @@ function collectRecommendations({
   externalDependencies,
   isEffect,
 }) {
-  console.log(
-    "[collectRecommendations]",
-    dependencies,
-    declaredDependencies,
-    stableDependencies,
-    externalDependencies
-  );
   // Our primary data structure.
   // It is a logical representation of property chains:
   // `props` -> `props.foo` -> `props.foo.bar` -> `props.foo.bar.baz`
@@ -1618,28 +1681,45 @@ function scanForConstructions({
  * props.foo.(bar) => (props).foo.bar
  * props.foo.bar.(baz) => (props).foo.bar.baz
  */
-function getDependency(node) {
+function getDependency(node: ESTree.Identifier) {
   if (
+    // @ts-ignore
     (node.parent.type === "MemberExpression" ||
+      // @ts-ignore
       node.parent.type === "OptionalMemberExpression") &&
+    // @ts-ignore
     node.parent.object === node &&
+    // @ts-ignore
     node.parent.property.name !== "current" &&
+    // @ts-ignore
     !node.parent.computed &&
     !(
-      node.parent.parent != null &&
-      (node.parent.parent.type === "CallExpression" ||
-        node.parent.parent.type === "OptionalCallExpression") &&
-      node.parent.parent.callee === node.parent
+      (
+        // @ts-ignore
+        node.parent.parent != null &&
+        // @ts-ignore
+        (node.parent.parent.type === "CallExpression" ||
+          // @ts-ignore
+          node.parent.parent.type === "OptionalCallExpression") &&
+        // @ts-ignore
+        node.parent.parent.callee === node.parent
+      )
     )
   ) {
+    // @ts-ignore
     return getDependency(node.parent);
   } else if (
     // Note: we don't check OptionalMemberExpression because it can't be LHS.
+    // @ts-ignore
     node.type === "MemberExpression" &&
+    // @ts-ignore
     node.parent &&
+    // @ts-ignore
     node.parent.type === "AssignmentExpression" &&
+    // @ts-ignore
     node.parent.left === node
   ) {
+    // @ts-ignore
     return node.object;
   } else {
     return node;
@@ -1711,7 +1791,11 @@ function analyzePropertyChain(node, optionalChains) {
   }
 }
 
-function getNodeWithoutReactNamespace(node, options?) {
+function getNodeWithoutReactNamespace(
+  node: ESTree.MemberExpression | ESTree.Identifier,
+  options?: ProcessedOptions
+): ESTree.Identifier {
+  // React.useEffect
   if (
     node.type === "MemberExpression" &&
     node.object.type === "Identifier" &&
@@ -1721,7 +1805,8 @@ function getNodeWithoutReactNamespace(node, options?) {
   ) {
     return node.property;
   }
-  return node;
+  // useEffect directly
+  return node as ESTree.Identifier;
 }
 
 // What's the index of callback that needs to be analyzed for a given Hook?
@@ -1729,7 +1814,10 @@ function getNodeWithoutReactNamespace(node, options?) {
 // 0 for useEffect/useMemo/useCallback(fn).
 // 1 for useImperativeHandle(ref, fn).
 // For additionally configured Hooks, assume that they're like useEffect (0).
-function getReactiveHookCallbackIndex(calleeNode, options) {
+function getReactiveHookCallbackIndex(
+  calleeNode: ESTree.MemberExpression | ESTree.Identifier,
+  options: ProcessedOptions
+) {
   const node = getNodeWithoutReactNamespace(calleeNode);
   if (node.type !== "Identifier") {
     return -1;
@@ -1775,21 +1863,27 @@ function getReactiveHookCallbackIndex(calleeNode, options) {
  * - optimized by only searching nodes with a range surrounding our target node
  * - agnostic to AST node types, it looks for `{ type: string, ... }`
  */
-function fastFindReferenceWithParent(start, target) {
+function fastFindReferenceWithParent(
+  start: ESTree.ArrowFunctionExpression | ESTree.FunctionExpression,
+  target: ESTree.Identifier
+): ESTree.Identifier {
   const queue = [start];
-  let item = null;
+  let item: ESTree.ArrowFunctionExpression | ESTree.FunctionExpression = null;
 
   while (queue.length) {
     item = queue.shift();
 
     if (isSameIdentifier(item, target)) {
-      return item;
+      return item as any as ESTree.Identifier;
     }
 
     if (!isAncestorNodeOf(item, target)) {
       continue;
     }
 
+    // const item = { a: 1, b: 2 };
+    // [a, 1]
+    // [b, 2]
     for (const [key, value] of Object.entries(item)) {
       if (key === "parent") {
         continue;

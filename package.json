@@ -1,16 +1,24 @@
 {
-  "name": "eslint-plugin-extra",
+  "name": "eslint-plugin-react-hooks",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "father-build --watch",
-    "build": "father-build"
+    "build": "father-build",
+    "replace": "node scripts/replace",
+    "test": "yarn eslint examples/index.tsx --config examples/.eslintrc.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "father-build": "^1.19.6"
+    "@types/eslint": "^7.28.0",
+    "@umijs/fabric": "^2.6.2",
+    "antd": "^4.16.10",
+    "eslint": "^7.32.0",
+    "father-build": "^1.19.6",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0"
   }
 }
