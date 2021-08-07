@@ -43,7 +43,7 @@
   dependencies:
     "@babel/highlight" "^7.10.4"
 
-"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.14.5":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.14.5":
   version "7.14.5"
   resolved "http://npm.wpt.la/@babel%2fcode-frame/-/code-frame-7.14.5.tgz#23b08d740e83f49c5e59945fbf1b43e80bbf4edb"
   integrity sha1-I7CNdA6D9JxeWZRfvxtD6Au/Tts=
@@ -82,7 +82,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@>=7.2.2", "@babel/core@>=7.9.0", "@babel/core@^7.12.10", "@babel/core@^7.12.16":
+"@babel/core@>=7.2.2", "@babel/core@>=7.9.0", "@babel/core@^7.1.0", "@babel/core@^7.12.10", "@babel/core@^7.12.16", "@babel/core@^7.7.2":
   version "7.15.0"
   resolved "http://npm.wpt.la/@babel%2fcore/-/core-7.15.0.tgz#749e57c68778b73ad8082775561f67f5196aafa8"
   integrity sha1-dJ5Xxod4tzrYCCd1Vh9n9Rlqr6g=
@@ -124,7 +124,7 @@
     semver "^6.3.0"
     source-map "^0.5.0"
 
-"@babel/eslint-parser@^7.12.1", "@babel/eslint-parser@^7.12.16":
+"@babel/eslint-parser@^7.12.1", "@babel/eslint-parser@^7.12.16", "@babel/eslint-parser@^7.15.0":
   version "7.15.0"
   resolved "http://npm.wpt.la/@babel%2feslint-parser/-/eslint-parser-7.15.0.tgz#b54f06e04d0e93aebcba99f89251e3bf0ee39f21"
   integrity sha1-tU8G4E0Ok668upn4klHjvw7jnyE=
@@ -142,7 +142,7 @@
     jsesc "^2.5.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.15.0":
+"@babel/generator@^7.15.0", "@babel/generator@^7.7.2":
   version "7.15.0"
   resolved "http://npm.wpt.la/@babel%2fgenerator/-/generator-7.15.0.tgz#a7d0c172e0d814974bad5aa77ace543b97917f15"
   integrity sha1-p9DBcuDYFJdLrVqnes5UO5eRfxU=
@@ -411,15 +411,15 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@babel/parser@^7.1.0", "@babel/parser@^7.15.0", "@babel/parser@^7.7.2":
+  version "7.15.0"
+  resolved "http://npm.wpt.la/@babel%2fparser/-/parser-7.15.0.tgz#b6d6e29058ca369127b0eeca2a1c4b5794f1b6b9"
+  integrity sha1-ttbikFjKNpEnsO7KKhxLV5Txtrk=
+
 "@babel/parser@^7.12.3", "@babel/parser@^7.14.5", "@babel/parser@^7.14.8", "@babel/parser@^7.14.9", "@babel/parser@^7.4.3":
   version "7.14.9"
   resolved "http://npm.wpt.la/@babel%2fparser/-/parser-7.14.9.tgz#596c1ad67608070058ebf8df50c1eaf65db895a4"
   integrity sha1-WWwa1nYIBwBY6/jfUMHq9l24laQ=
-
-"@babel/parser@^7.15.0":
-  version "7.15.0"
-  resolved "http://npm.wpt.la/@babel%2fparser/-/parser-7.15.0.tgz#b6d6e29058ca369127b0eeca2a1c4b5794f1b6b9"
-  integrity sha1-ttbikFjKNpEnsO7KKhxLV5Txtrk=
 
 "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@^7.14.5":
   version "7.14.5"
@@ -632,7 +632,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/plugin-syntax-class-properties@^7.12.1", "@babel/plugin-syntax-class-properties@^7.12.13":
+"@babel/plugin-syntax-bigint@^7.8.3":
+  version "7.8.3"
+  resolved "http://npm.wpt.la/@babel%2fplugin-syntax-bigint/-/plugin-syntax-bigint-7.8.3.tgz#4c9a6f669f5d0cdf1b90a1671e9a146be5300cea"
+  integrity sha1-TJpvZp9dDN8bkKFnHpoUa+UwDOo=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.0"
+
+"@babel/plugin-syntax-class-properties@^7.12.1", "@babel/plugin-syntax-class-properties@^7.12.13", "@babel/plugin-syntax-class-properties@^7.8.3":
   version "7.12.13"
   resolved "http://npm.wpt.la/@babel%2fplugin-syntax-class-properties/-/plugin-syntax-class-properties-7.12.13.tgz#b5c987274c4a3a82b89714796931a6b53544ae10"
   integrity sha1-tcmHJ0xKOoK4lxR5aTGmtTVErhA=
@@ -681,6 +688,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
+"@babel/plugin-syntax-import-meta@^7.8.3":
+  version "7.10.4"
+  resolved "http://npm.wpt.la/@babel%2fplugin-syntax-import-meta/-/plugin-syntax-import-meta-7.10.4.tgz#ee601348c370fa334d2207be158777496521fd51"
+  integrity sha1-7mATSMNw+jNNIge+FYd3SWUh/VE=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.10.4"
+
 "@babel/plugin-syntax-json-strings@^7.8.0", "@babel/plugin-syntax-json-strings@^7.8.3":
   version "7.8.3"
   resolved "http://npm.wpt.la/@babel%2fplugin-syntax-json-strings/-/plugin-syntax-json-strings-7.8.3.tgz#01ca21b668cd8218c9e640cb6dd88c5412b2c96a"
@@ -695,7 +709,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
-"@babel/plugin-syntax-logical-assignment-operators@^7.10.4":
+"@babel/plugin-syntax-logical-assignment-operators@^7.10.4", "@babel/plugin-syntax-logical-assignment-operators@^7.8.3":
   version "7.10.4"
   resolved "http://npm.wpt.la/@babel%2fplugin-syntax-logical-assignment-operators/-/plugin-syntax-logical-assignment-operators-7.10.4.tgz#ca91ef46303530448b906652bac2e9fe9941f699"
   integrity sha1-ypHvRjA1MESLkGZSusLp/plB9pk=
@@ -709,7 +723,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/plugin-syntax-numeric-separator@^7.10.4":
+"@babel/plugin-syntax-numeric-separator@^7.10.4", "@babel/plugin-syntax-numeric-separator@^7.8.3":
   version "7.10.4"
   resolved "http://npm.wpt.la/@babel%2fplugin-syntax-numeric-separator/-/plugin-syntax-numeric-separator-7.10.4.tgz#b9b070b3e33570cd9fd07ba7fa91c0dd37b9af97"
   integrity sha1-ubBws+M1cM2f0Hun+pHA3Te5r5c=
@@ -744,14 +758,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
-"@babel/plugin-syntax-top-level-await@^7.12.1", "@babel/plugin-syntax-top-level-await@^7.14.5":
+"@babel/plugin-syntax-top-level-await@^7.12.1", "@babel/plugin-syntax-top-level-await@^7.14.5", "@babel/plugin-syntax-top-level-await@^7.8.3":
   version "7.14.5"
   resolved "http://npm.wpt.la/@babel%2fplugin-syntax-top-level-await/-/plugin-syntax-top-level-await-7.14.5.tgz#c1cfdadc35a646240001f06138247b741c34d94c"
   integrity sha1-wc/a3DWmRiQAAfBhOCR7dBw02Uw=
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
-"@babel/plugin-syntax-typescript@^7.14.5":
+"@babel/plugin-syntax-typescript@^7.14.5", "@babel/plugin-syntax-typescript@^7.7.2":
   version "7.14.5"
   resolved "http://npm.wpt.la/@babel%2fplugin-syntax-typescript/-/plugin-syntax-typescript-7.14.5.tgz#b82c6ce471b165b5ce420cf92914d6fb46225716"
   integrity sha1-uCxs5HGxZbXOQgz5KRTW+0YiVxY=
@@ -1417,7 +1431,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/template@^7.10.4", "@babel/template@^7.14.5", "@babel/template@^7.4.0":
+"@babel/template@^7.10.4", "@babel/template@^7.14.5", "@babel/template@^7.3.3", "@babel/template@^7.4.0":
   version "7.14.5"
   resolved "http://npm.wpt.la/@babel%2ftemplate/-/template-7.14.5.tgz#a9bc9d8b33354ff6e55a9c60d1109200a68974f4"
   integrity sha1-qbydizM1T/blWpxg0RCSAKaJdPQ=
@@ -1425,6 +1439,21 @@
     "@babel/code-frame" "^7.14.5"
     "@babel/parser" "^7.14.5"
     "@babel/types" "^7.14.5"
+
+"@babel/traverse@^7.1.0", "@babel/traverse@^7.15.0", "@babel/traverse@^7.7.2":
+  version "7.15.0"
+  resolved "http://npm.wpt.la/@babel%2ftraverse/-/traverse-7.15.0.tgz#4cca838fd1b2a03283c1f38e141f639d60b3fc98"
+  integrity sha1-TMqDj9GyoDKDwfOOFB9jnWCz/Jg=
+  dependencies:
+    "@babel/code-frame" "^7.14.5"
+    "@babel/generator" "^7.15.0"
+    "@babel/helper-function-name" "^7.14.5"
+    "@babel/helper-hoist-variables" "^7.14.5"
+    "@babel/helper-split-export-declaration" "^7.14.5"
+    "@babel/parser" "^7.15.0"
+    "@babel/types" "^7.15.0"
+    debug "^4.1.0"
+    globals "^11.1.0"
 
 "@babel/traverse@^7.12.1", "@babel/traverse@^7.13.0", "@babel/traverse@^7.14.5", "@babel/traverse@^7.14.8", "@babel/traverse@^7.4.3":
   version "7.14.9"
@@ -1441,20 +1470,13 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/traverse@^7.15.0":
+"@babel/types@^7.0.0", "@babel/types@^7.15.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3":
   version "7.15.0"
-  resolved "http://npm.wpt.la/@babel%2ftraverse/-/traverse-7.15.0.tgz#4cca838fd1b2a03283c1f38e141f639d60b3fc98"
-  integrity sha1-TMqDj9GyoDKDwfOOFB9jnWCz/Jg=
+  resolved "http://npm.wpt.la/@babel%2ftypes/-/types-7.15.0.tgz#61af11f2286c4e9c69ca8deb5f4375a73c72dcbd"
+  integrity sha1-Ya8R8ihsTpxpyo3rX0N1pzxy3L0=
   dependencies:
-    "@babel/code-frame" "^7.14.5"
-    "@babel/generator" "^7.15.0"
-    "@babel/helper-function-name" "^7.14.5"
-    "@babel/helper-hoist-variables" "^7.14.5"
-    "@babel/helper-split-export-declaration" "^7.14.5"
-    "@babel/parser" "^7.15.0"
-    "@babel/types" "^7.15.0"
-    debug "^4.1.0"
-    globals "^11.1.0"
+    "@babel/helper-validator-identifier" "^7.14.9"
+    to-fast-properties "^2.0.0"
 
 "@babel/types@^7.12.1", "@babel/types@^7.12.6", "@babel/types@^7.14.5", "@babel/types@^7.14.8", "@babel/types@^7.14.9", "@babel/types@^7.4.0", "@babel/types@^7.4.4":
   version "7.14.9"
@@ -1464,13 +1486,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@babel/types@^7.15.0":
-  version "7.15.0"
-  resolved "http://npm.wpt.la/@babel%2ftypes/-/types-7.15.0.tgz#61af11f2286c4e9c69ca8deb5f4375a73c72dcbd"
-  integrity sha1-Ya8R8ihsTpxpyo3rX0N1pzxy3L0=
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.14.9"
-    to-fast-properties "^2.0.0"
+"@bcoe/v8-coverage@^0.2.3":
+  version "0.2.3"
+  resolved "http://npm.wpt.la/@bcoe%2fv8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
+  integrity sha1-daLotRy3WKdVPWgEpZMteqznXDk=
 
 "@ctrl/tinycolor@^3.4.0":
   version "3.4.0"
@@ -1505,6 +1524,191 @@
   version "1.2.0"
   resolved "http://npm.wpt.la/@humanwhocodes%2fobject-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha1-h956+cIxgm/daKxyWPd8Qp4OX88=
+
+"@istanbuljs/load-nyc-config@^1.0.0":
+  version "1.1.0"
+  resolved "http://npm.wpt.la/@istanbuljs%2fload-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
+  integrity sha1-/T2x1Z7PfPEh6AZQu4ZxL5tV7O0=
+  dependencies:
+    camelcase "^5.3.1"
+    find-up "^4.1.0"
+    get-package-type "^0.1.0"
+    js-yaml "^3.13.1"
+    resolve-from "^5.0.0"
+
+"@istanbuljs/schema@^0.1.2":
+  version "0.1.3"
+  resolved "http://npm.wpt.la/@istanbuljs%2fschema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
+  integrity sha1-5F44TkuOwWvOL9kDr3hFD2v37Jg=
+
+"@jest/console@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2fconsole/-/console-27.0.6.tgz#3eb72ea80897495c3d73dd97aab7f26770e2260f"
+  integrity sha1-PrcuqAiXSVw9c92XqrfyZ3DiJg8=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    jest-message-util "^27.0.6"
+    jest-util "^27.0.6"
+    slash "^3.0.0"
+
+"@jest/core@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2fcore/-/core-27.0.6.tgz#c5f642727a0b3bf0f37c4b46c675372d0978d4a1"
+  integrity sha1-xfZCcnoLO/DzfEtGxnU3LQl41KE=
+  dependencies:
+    "@jest/console" "^27.0.6"
+    "@jest/reporters" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/transform" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    ansi-escapes "^4.2.1"
+    chalk "^4.0.0"
+    emittery "^0.8.1"
+    exit "^0.1.2"
+    graceful-fs "^4.2.4"
+    jest-changed-files "^27.0.6"
+    jest-config "^27.0.6"
+    jest-haste-map "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-regex-util "^27.0.6"
+    jest-resolve "^27.0.6"
+    jest-resolve-dependencies "^27.0.6"
+    jest-runner "^27.0.6"
+    jest-runtime "^27.0.6"
+    jest-snapshot "^27.0.6"
+    jest-util "^27.0.6"
+    jest-validate "^27.0.6"
+    jest-watcher "^27.0.6"
+    micromatch "^4.0.4"
+    p-each-series "^2.1.0"
+    rimraf "^3.0.0"
+    slash "^3.0.0"
+    strip-ansi "^6.0.0"
+
+"@jest/environment@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2fenvironment/-/environment-27.0.6.tgz#ee293fe996db01d7d663b8108fa0e1ff436219d2"
+  integrity sha1-7ik/6ZbbAdfWY7gQj6Dh/0NiGdI=
+  dependencies:
+    "@jest/fake-timers" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    jest-mock "^27.0.6"
+
+"@jest/fake-timers@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2ffake-timers/-/fake-timers-27.0.6.tgz#cbad52f3fe6abe30e7acb8cd5fa3466b9588e3df"
+  integrity sha1-y61S8/5qvjDnrLjNX6NGa5WI498=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    "@sinonjs/fake-timers" "^7.0.2"
+    "@types/node" "*"
+    jest-message-util "^27.0.6"
+    jest-mock "^27.0.6"
+    jest-util "^27.0.6"
+
+"@jest/globals@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2fglobals/-/globals-27.0.6.tgz#48e3903f99a4650673d8657334d13c9caf0e8f82"
+  integrity sha1-SOOQP5mkZQZz2GVzNNE8nK8Oj4I=
+  dependencies:
+    "@jest/environment" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    expect "^27.0.6"
+
+"@jest/reporters@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2freporters/-/reporters-27.0.6.tgz#91e7f2d98c002ad5df94d5b5167c1eb0b9fd5b00"
+  integrity sha1-kefy2YwAKtXflNW1FnwesLn9WwA=
+  dependencies:
+    "@bcoe/v8-coverage" "^0.2.3"
+    "@jest/console" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/transform" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    chalk "^4.0.0"
+    collect-v8-coverage "^1.0.0"
+    exit "^0.1.2"
+    glob "^7.1.2"
+    graceful-fs "^4.2.4"
+    istanbul-lib-coverage "^3.0.0"
+    istanbul-lib-instrument "^4.0.3"
+    istanbul-lib-report "^3.0.0"
+    istanbul-lib-source-maps "^4.0.0"
+    istanbul-reports "^3.0.2"
+    jest-haste-map "^27.0.6"
+    jest-resolve "^27.0.6"
+    jest-util "^27.0.6"
+    jest-worker "^27.0.6"
+    slash "^3.0.0"
+    source-map "^0.6.0"
+    string-length "^4.0.1"
+    terminal-link "^2.0.0"
+    v8-to-istanbul "^8.0.0"
+
+"@jest/source-map@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2fsource-map/-/source-map-27.0.6.tgz#be9e9b93565d49b0548b86e232092491fb60551f"
+  integrity sha1-vp6bk1ZdSbBUi4biMgkkkftgVR8=
+  dependencies:
+    callsites "^3.0.0"
+    graceful-fs "^4.2.4"
+    source-map "^0.6.0"
+
+"@jest/test-result@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2ftest-result/-/test-result-27.0.6.tgz#3fa42015a14e4fdede6acd042ce98c7f36627051"
+  integrity sha1-P6QgFaFOT97eas0ELOmMfzZicFE=
+  dependencies:
+    "@jest/console" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    collect-v8-coverage "^1.0.0"
+
+"@jest/test-sequencer@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2ftest-sequencer/-/test-sequencer-27.0.6.tgz#80a913ed7a1130545b1cd777ff2735dd3af5d34b"
+  integrity sha1-gKkT7XoRMFRbHNd3/yc13Tr100s=
+  dependencies:
+    "@jest/test-result" "^27.0.6"
+    graceful-fs "^4.2.4"
+    jest-haste-map "^27.0.6"
+    jest-runtime "^27.0.6"
+
+"@jest/transform@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2ftransform/-/transform-27.0.6.tgz#189ad7107413208f7600f4719f81dd2f7278cc95"
+  integrity sha1-GJrXEHQTII92APRxn4HdL3J4zJU=
+  dependencies:
+    "@babel/core" "^7.1.0"
+    "@jest/types" "^27.0.6"
+    babel-plugin-istanbul "^6.0.0"
+    chalk "^4.0.0"
+    convert-source-map "^1.4.0"
+    fast-json-stable-stringify "^2.0.0"
+    graceful-fs "^4.2.4"
+    jest-haste-map "^27.0.6"
+    jest-regex-util "^27.0.6"
+    jest-util "^27.0.6"
+    micromatch "^4.0.4"
+    pirates "^4.0.1"
+    slash "^3.0.0"
+    source-map "^0.6.1"
+    write-file-atomic "^3.0.0"
+
+"@jest/types@^27.0.6":
+  version "27.0.6"
+  resolved "http://npm.wpt.la/@jest%2ftypes/-/types-27.0.6.tgz#9a992bc517e0c49f035938b8549719c2de40706b"
+  integrity sha1-mpkrxRfgxJ8DWTi4VJcZwt5AcGs=
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
 
 "@lerna/package@3.16.0":
   version "3.16.0"
@@ -1659,6 +1863,20 @@
   resolved "http://npm.wpt.la/@sindresorhus%2fis/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha1-n7OjzzEyMoFR81PeRjLgHlIQK+o=
 
+"@sinonjs/commons@^1.7.0":
+  version "1.8.3"
+  resolved "http://npm.wpt.la/@sinonjs%2fcommons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
+  integrity sha1-OALd0hpQqUm2ch3dcto25n5/Gy0=
+  dependencies:
+    type-detect "4.0.8"
+
+"@sinonjs/fake-timers@^7.0.2":
+  version "7.1.2"
+  resolved "http://npm.wpt.la/@sinonjs%2ffake-timers/-/fake-timers-7.1.2.tgz#2524eae70c4910edccf99b2f4e6efc5894aff7b5"
+  integrity sha1-JSTq5wxJEO3M+ZsvTm78WJSv97U=
+  dependencies:
+    "@sinonjs/commons" "^1.7.0"
+
 "@stylelint/postcss-css-in-js@^0.37.2":
   version "0.37.2"
   resolved "http://npm.wpt.la/@stylelint%2fpostcss-css-in-js/-/postcss-css-in-js-0.37.2.tgz#7e5a84ad181f4234a2480803422a47b8749af3d2"
@@ -1784,6 +2002,49 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tootallnate/once@1":
+  version "1.1.2"
+  resolved "http://npm.wpt.la/@tootallnate%2fonce/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
+  integrity sha1-zLkURTYBeaBOf+av94wA/8Hur4I=
+
+"@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14":
+  version "7.1.15"
+  resolved "http://npm.wpt.la/@types%2fbabel__core/-/babel__core-7.1.15.tgz#2ccfb1ad55a02c83f8e0ad327cbc332f55eb1024"
+  integrity sha1-LM+xrVWgLIP44K0yfLwzL1XrECQ=
+  dependencies:
+    "@babel/parser" "^7.1.0"
+    "@babel/types" "^7.0.0"
+    "@types/babel__generator" "*"
+    "@types/babel__template" "*"
+    "@types/babel__traverse" "*"
+
+"@types/babel__generator@*":
+  version "7.6.3"
+  resolved "http://npm.wpt.la/@types%2fbabel__generator/-/babel__generator-7.6.3.tgz#f456b4b2ce79137f768aa130d2423d2f0ccfaba5"
+  integrity sha1-9Fa0ss55E392iqEw0kI9LwzPq6U=
+  dependencies:
+    "@babel/types" "^7.0.0"
+
+"@types/babel__template@*":
+  version "7.4.1"
+  resolved "http://npm.wpt.la/@types%2fbabel__template/-/babel__template-7.4.1.tgz#3d1a48fd9d6c0edfd56f2ff578daed48f36c8969"
+  integrity sha1-PRpI/Z1sDt/Vby/1eNrtSPNsiWk=
+  dependencies:
+    "@babel/parser" "^7.1.0"
+    "@babel/types" "^7.0.0"
+
+"@types/babel__traverse@*", "@types/babel__traverse@^7.0.4", "@types/babel__traverse@^7.0.6":
+  version "7.14.2"
+  resolved "http://npm.wpt.la/@types%2fbabel__traverse/-/babel__traverse-7.14.2.tgz#ffcd470bbb3f8bf30481678fb5502278ca833a43"
+  integrity sha1-/81HC7s/i/MEgWePtVAieMqDOkM=
+  dependencies:
+    "@babel/types" "^7.3.0"
+
+"@types/eslint-visitor-keys@^1.0.0":
+  version "1.0.0"
+  resolved "http://npm.wpt.la/@types%2feslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
+  integrity sha1-HuMNeVRMqE1o1LPNsK9PIFZj3S0=
+
 "@types/eslint@^7.2.13", "@types/eslint@^7.28.0":
   version "7.28.0"
   resolved "http://npm.wpt.la/@types%2feslint/-/eslint-7.28.0.tgz#7e41f2481d301c68e14f483fe10b017753ce8d5a"
@@ -1810,6 +2071,13 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/graceful-fs@^4.1.2":
+  version "4.1.5"
+  resolved "http://npm.wpt.la/@types%2fgraceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
+  integrity sha1-If+6DZjaQ1DbZIkfkqnl2zzbThU=
+  dependencies:
+    "@types/node" "*"
+
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
   resolved "http://npm.wpt.la/@types%2fhoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
@@ -1818,7 +2086,26 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
-"@types/json-schema@*", "@types/json-schema@^7.0.7":
+"@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
+  version "2.0.3"
+  resolved "http://npm.wpt.la/@types%2fistanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
+  integrity sha1-S6jdtyAiH0MuRDvV+RF/0iz9R2I=
+
+"@types/istanbul-lib-report@*":
+  version "3.0.0"
+  resolved "http://npm.wpt.la/@types%2fistanbul-lib-report/-/istanbul-lib-report-3.0.0.tgz#c14c24f18ea8190c118ee7562b7ff99a36552686"
+  integrity sha1-wUwk8Y6oGQwRjudWK3/5mjZVJoY=
+  dependencies:
+    "@types/istanbul-lib-coverage" "*"
+
+"@types/istanbul-reports@^3.0.0":
+  version "3.0.1"
+  resolved "http://npm.wpt.la/@types%2fistanbul-reports/-/istanbul-reports-3.0.1.tgz#9153fe98bba2bd565a63add9436d6f0d7f8468ff"
+  integrity sha1-kVP+mLuivVZaY63ZQ21vDX+EaP8=
+  dependencies:
+    "@types/istanbul-lib-report" "*"
+
+"@types/json-schema@*", "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.7":
   version "7.0.9"
   resolved "http://npm.wpt.la/@types%2fjson-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha1-l+3JA36gw4WFMgsolk3eOznkZg0=
@@ -1854,6 +2141,11 @@
   version "4.0.0"
   resolved "http://npm.wpt.la/@types%2fparse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=
+
+"@types/prettier@^2.1.5":
+  version "2.3.2"
+  resolved "http://npm.wpt.la/@types%2fprettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
+  integrity sha1-/IwoJeTtIUJHO0qBBk5uCBRj0bM=
 
 "@types/prop-types@*":
   version "15.7.4"
@@ -1896,6 +2188,11 @@
   resolved "http://npm.wpt.la/@types%2fscheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha1-GmL4lSVyPd4kuhsBsJK/XfitTTk=
 
+"@types/stack-utils@^2.0.0":
+  version "2.0.1"
+  resolved "http://npm.wpt.la/@types%2fstack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
+  integrity sha1-IPGClPeX8iCbX2XI47XI6CYdEnw=
+
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.6"
   resolved "http://npm.wpt.la/@types%2funist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
@@ -1917,6 +2214,18 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
+"@types/yargs-parser@*":
+  version "20.2.1"
+  resolved "http://npm.wpt.la/@types%2fyargs-parser/-/yargs-parser-20.2.1.tgz#3b9ce2489919d9e4fea439b76916abc34b2df129"
+  integrity sha1-O5ziSJkZ2eT+pDm3aRarw0st8Sk=
+
+"@types/yargs@^16.0.0":
+  version "16.0.4"
+  resolved "http://npm.wpt.la/@types%2fyargs/-/yargs-16.0.4.tgz#26aad98dd2c2a38e421086ea9ad42b9e51642977"
+  integrity sha1-JqrZjdLCo45CEIbqmtQrnlFkKXc=
+  dependencies:
+    "@types/yargs-parser" "*"
+
 "@typescript-eslint/eslint-plugin@^4.10.0":
   version "4.29.0"
   resolved "http://npm.wpt.la/@typescript-eslint%2feslint-plugin/-/eslint-plugin-4.29.0.tgz#b866c9cd193bfaba5e89bade0015629ebeb27996"
@@ -1930,6 +2239,27 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
+"@typescript-eslint/experimental-utils@2.34.0":
+  version "2.34.0"
+  resolved "http://npm.wpt.la/@typescript-eslint%2fexperimental-utils/-/experimental-utils-2.34.0.tgz#d3524b644cdb40eebceca67f8cf3e4cc9c8f980f"
+  integrity sha1-01JLZEzbQO687KZ/jPPkzJyPmA8=
+  dependencies:
+    "@types/json-schema" "^7.0.3"
+    "@typescript-eslint/typescript-estree" "2.34.0"
+    eslint-scope "^5.0.0"
+    eslint-utils "^2.0.0"
+
+"@typescript-eslint/experimental-utils@3.10.1":
+  version "3.10.1"
+  resolved "http://npm.wpt.la/@typescript-eslint%2fexperimental-utils/-/experimental-utils-3.10.1.tgz#e179ffc81a80ebcae2ea04e0332f8b251345a686"
+  integrity sha1-4Xn/yBqA68ri6gTgMy+LJRNFpoY=
+  dependencies:
+    "@types/json-schema" "^7.0.3"
+    "@typescript-eslint/types" "3.10.1"
+    "@typescript-eslint/typescript-estree" "3.10.1"
+    eslint-scope "^5.0.0"
+    eslint-utils "^2.0.0"
+
 "@typescript-eslint/experimental-utils@4.29.0", "@typescript-eslint/experimental-utils@^4.0.1":
   version "4.29.0"
   resolved "http://npm.wpt.la/@typescript-eslint%2fexperimental-utils/-/experimental-utils-4.29.0.tgz#19b1417602d0e1ef325b3312ee95f61220542df5"
@@ -1942,7 +2272,29 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/parser@^4.10.0":
+"@typescript-eslint/parser-v2@npm:@typescript-eslint/parser@^2.26.0":
+  version "2.34.0"
+  resolved "http://npm.wpt.la/@typescript-eslint%2fparser/-/parser-2.34.0.tgz#50252630ca319685420e9a39ca05fe185a256bc8"
+  integrity sha1-UCUmMMoxloVCDpo5ygX+GFola8g=
+  dependencies:
+    "@types/eslint-visitor-keys" "^1.0.0"
+    "@typescript-eslint/experimental-utils" "2.34.0"
+    "@typescript-eslint/typescript-estree" "2.34.0"
+    eslint-visitor-keys "^1.1.0"
+
+"@typescript-eslint/parser-v3@npm:@typescript-eslint/parser@^3.10.0":
+  version "3.10.1"
+  resolved "http://npm.wpt.la/@typescript-eslint%2fparser/-/parser-3.10.1.tgz#1883858e83e8b442627e1ac6f408925211155467"
+  integrity sha1-GIOFjoPotEJifhrG9AiSUhEVVGc=
+  dependencies:
+    "@types/eslint-visitor-keys" "^1.0.0"
+    "@typescript-eslint/experimental-utils" "3.10.1"
+    "@typescript-eslint/types" "3.10.1"
+    "@typescript-eslint/typescript-estree" "3.10.1"
+    eslint-visitor-keys "^1.1.0"
+
+"@typescript-eslint/parser-v4@npm:@typescript-eslint/parser@^4.1.0", "@typescript-eslint/parser@^4.10.0":
+  name "@typescript-eslint/parser-v4"
   version "4.29.0"
   resolved "http://npm.wpt.la/@typescript-eslint%2fparser/-/parser-4.29.0.tgz#e5367ca3c63636bb5d8e0748fcbab7a4f4a04289"
   integrity sha1-5TZ8o8Y2NrtdjgdI/Lq3pPSgQok=
@@ -1960,10 +2312,42 @@
     "@typescript-eslint/types" "4.29.0"
     "@typescript-eslint/visitor-keys" "4.29.0"
 
+"@typescript-eslint/types@3.10.1":
+  version "3.10.1"
+  resolved "http://npm.wpt.la/@typescript-eslint%2ftypes/-/types-3.10.1.tgz#1d7463fa7c32d8a23ab508a803ca2fe26e758727"
+  integrity sha1-HXRj+nwy2KI6tQioA8ov4m51hyc=
+
 "@typescript-eslint/types@4.29.0":
   version "4.29.0"
   resolved "http://npm.wpt.la/@typescript-eslint%2ftypes/-/types-4.29.0.tgz#c8f1a1e4441ea4aca9b3109241adbc145f7f8a4e"
   integrity sha1-yPGh5EQepKypsxCSQa28FF9/ik4=
+
+"@typescript-eslint/typescript-estree@2.34.0":
+  version "2.34.0"
+  resolved "http://npm.wpt.la/@typescript-eslint%2ftypescript-estree/-/typescript-estree-2.34.0.tgz#14aeb6353b39ef0732cc7f1b8285294937cf37d5"
+  integrity sha1-FK62NTs57wcyzH8bgoUpSTfPN9U=
+  dependencies:
+    debug "^4.1.1"
+    eslint-visitor-keys "^1.1.0"
+    glob "^7.1.6"
+    is-glob "^4.0.1"
+    lodash "^4.17.15"
+    semver "^7.3.2"
+    tsutils "^3.17.1"
+
+"@typescript-eslint/typescript-estree@3.10.1":
+  version "3.10.1"
+  resolved "http://npm.wpt.la/@typescript-eslint%2ftypescript-estree/-/typescript-estree-3.10.1.tgz#fd0061cc38add4fad45136d654408569f365b853"
+  integrity sha1-/QBhzDit1PrUUTbWVECFafNluFM=
+  dependencies:
+    "@typescript-eslint/types" "3.10.1"
+    "@typescript-eslint/visitor-keys" "3.10.1"
+    debug "^4.1.1"
+    glob "^7.1.6"
+    is-glob "^4.0.1"
+    lodash "^4.17.15"
+    semver "^7.3.2"
+    tsutils "^3.17.1"
 
 "@typescript-eslint/typescript-estree@4.29.0":
   version "4.29.0"
@@ -1977,6 +2361,13 @@
     is-glob "^4.0.1"
     semver "^7.3.5"
     tsutils "^3.21.0"
+
+"@typescript-eslint/visitor-keys@3.10.1":
+  version "3.10.1"
+  resolved "http://npm.wpt.la/@typescript-eslint%2fvisitor-keys/-/visitor-keys-3.10.1.tgz#cd4274773e3eb63b2e870ac602274487ecd1e931"
+  integrity sha1-zUJ0dz4+tjsuhwrGAidEh+zR6TE=
+  dependencies:
+    eslint-visitor-keys "^1.1.0"
 
 "@typescript-eslint/visitor-keys@4.29.0":
   version "4.29.0"
@@ -2029,6 +2420,11 @@
     stylelint-order "^4.0.0"
     typescript "^4.0.2"
 
+abab@^2.0.3, abab@^2.0.5:
+  version "2.0.5"
+  resolved "http://npm.wpt.la/abab/-/abab-2.0.5.tgz#c0b678fb32d60fc1219c784d6a826fe385aeb79a"
+  integrity sha1-wLZ4+zLWD8EhnHhNaoJv44Wut5o=
+
 accord@^0.29.0:
   version "0.29.0"
   resolved "http://npm.wpt.la/accord/-/accord-0.29.0.tgz#b741c176d00435c5929d466dfe8cf6bee933b1e4"
@@ -2049,15 +2445,40 @@ accord@^0.29.0:
     uglify-js "^2.8.22"
     when "^3.7.8"
 
+acorn-globals@^6.0.0:
+  version "6.0.0"
+  resolved "http://npm.wpt.la/acorn-globals/-/acorn-globals-6.0.0.tgz#46cdd39f0f8ff08a876619b55f5ac8a6dc770b45"
+  integrity sha1-Rs3Tnw+P8IqHZhm1X1rIptx3C0U=
+  dependencies:
+    acorn "^7.1.1"
+    acorn-walk "^7.1.1"
+
 acorn-jsx@^5.3.1:
   version "5.3.2"
   resolved "http://npm.wpt.la/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
   integrity sha1-ftW7VZCLOy8bxVxq8WU7rafweTc=
 
-acorn@^7.4.0:
+acorn-walk@^7.1.1:
+  version "7.2.0"
+  resolved "http://npm.wpt.la/acorn-walk/-/acorn-walk-7.2.0.tgz#0de889a601203909b0fbe07b8938dc21d2e967bc"
+  integrity sha1-DeiJpgEgOQmw++B7iTjcIdLpZ7w=
+
+acorn@^7.1.1, acorn@^7.4.0:
   version "7.4.1"
   resolved "http://npm.wpt.la/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha1-/q7SVZc9LndVW4PbwIhRpsY1IPo=
+
+acorn@^8.2.4:
+  version "8.4.1"
+  resolved "http://npm.wpt.la/acorn/-/acorn-8.4.1.tgz#56c36251fc7cabc7096adc18f05afe814321a28c"
+  integrity sha1-VsNiUfx8q8cJatwY8Fr+gUMhoow=
+
+agent-base@6:
+  version "6.0.2"
+  resolved "http://npm.wpt.la/agent-base/-/agent-base-6.0.2.tgz#49fff58577cfee3f37176feab4c22e00f86d7f77"
+  integrity sha1-Sf/1hXfP7j83F2/qtMIuAPhtf3c=
+  dependencies:
+    debug "4"
 
 ajv@6.10.0:
   version "6.10.0"
@@ -2194,6 +2615,11 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
+ansi-styles@^5.0.0:
+  version "5.2.0"
+  resolved "http://npm.wpt.la/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
+  integrity sha1-B0SWkK1Fd30ZJKwquy/IiV26g2s=
+
 ansi-wrap@0.1.0, ansi-wrap@^0.1.0:
   version "0.1.0"
   resolved "http://npm.wpt.la/ansi-wrap/-/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
@@ -2247,7 +2673,7 @@ antd@^4.16.10:
     scroll-into-view-if-needed "^2.2.25"
     warning "^4.0.3"
 
-anymatch@~3.1.2:
+anymatch@^3.0.3, anymatch@~3.1.2:
   version "3.1.2"
   resolved "http://npm.wpt.la/anymatch/-/anymatch-3.1.2.tgz#c0557c096af32f106198f4f4e2a383537e378716"
   integrity sha1-wFV8CWrzLxBhmPT04qODU343hxY=
@@ -2505,6 +2931,20 @@ axobject-query@^2.2.0:
   resolved "http://npm.wpt.la/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha1-lD1H4QwLcEqkInXiDt83ImSJib4=
 
+babel-jest@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/babel-jest/-/babel-jest-27.0.6.tgz#e99c6e0577da2655118e3608b68761a5a69bd0d8"
+  integrity sha1-6ZxuBXfaJlURjjYItodhpaab0Ng=
+  dependencies:
+    "@jest/transform" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/babel__core" "^7.1.14"
+    babel-plugin-istanbul "^6.0.0"
+    babel-preset-jest "^27.0.6"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.4"
+    slash "^3.0.0"
+
 babel-plugin-dynamic-import-node@^2.3.3:
   version "2.3.3"
   resolved "http://npm.wpt.la/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.3.tgz#84fda19c976ec5c6defef57f9427b3def66e17a3"
@@ -2521,6 +2961,27 @@ babel-plugin-istanbul@^5.2.0:
     find-up "^3.0.0"
     istanbul-lib-instrument "^3.3.0"
     test-exclude "^5.2.3"
+
+babel-plugin-istanbul@^6.0.0:
+  version "6.0.0"
+  resolved "http://npm.wpt.la/babel-plugin-istanbul/-/babel-plugin-istanbul-6.0.0.tgz#e159ccdc9af95e0b570c75b4573b7c34d671d765"
+  integrity sha1-4VnM3Jr5XgtXDHW0Vzt8NNZx12U=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@istanbuljs/load-nyc-config" "^1.0.0"
+    "@istanbuljs/schema" "^0.1.2"
+    istanbul-lib-instrument "^4.0.0"
+    test-exclude "^6.0.0"
+
+babel-plugin-jest-hoist@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-27.0.6.tgz#f7c6b3d764af21cb4a2a1ab6870117dbde15b456"
+  integrity sha1-98az12SvIctKKhq2hwEX294VtFY=
+  dependencies:
+    "@babel/template" "^7.3.3"
+    "@babel/types" "^7.3.3"
+    "@types/babel__core" "^7.0.0"
+    "@types/babel__traverse" "^7.0.6"
 
 babel-plugin-polyfill-corejs2@^0.2.2:
   version "0.2.2"
@@ -2550,6 +3011,32 @@ babel-plugin-react-require@3.1.1:
   version "3.1.1"
   resolved "http://npm.wpt.la/babel-plugin-react-require/-/babel-plugin-react-require-3.1.1.tgz#5c3d2564fa16b1e45212ed52519db147b1596106"
   integrity sha1-XD0lZPoWseRSEu1SUZ2xR7FZYQY=
+
+babel-preset-current-node-syntax@^1.0.0:
+  version "1.0.1"
+  resolved "http://npm.wpt.la/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.0.1.tgz#b4399239b89b2a011f9ddbe3e4f401fc40cff73b"
+  integrity sha1-tDmSObibKgEfndvj5PQB/EDP9zs=
+  dependencies:
+    "@babel/plugin-syntax-async-generators" "^7.8.4"
+    "@babel/plugin-syntax-bigint" "^7.8.3"
+    "@babel/plugin-syntax-class-properties" "^7.8.3"
+    "@babel/plugin-syntax-import-meta" "^7.8.3"
+    "@babel/plugin-syntax-json-strings" "^7.8.3"
+    "@babel/plugin-syntax-logical-assignment-operators" "^7.8.3"
+    "@babel/plugin-syntax-nullish-coalescing-operator" "^7.8.3"
+    "@babel/plugin-syntax-numeric-separator" "^7.8.3"
+    "@babel/plugin-syntax-object-rest-spread" "^7.8.3"
+    "@babel/plugin-syntax-optional-catch-binding" "^7.8.3"
+    "@babel/plugin-syntax-optional-chaining" "^7.8.3"
+    "@babel/plugin-syntax-top-level-await" "^7.8.3"
+
+babel-preset-jest@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/babel-preset-jest/-/babel-preset-jest-27.0.6.tgz#909ef08e9f24a4679768be2f60a3df0856843f9d"
+  integrity sha1-kJ7wjp8kpGeXaL4vYKPfCFaEP50=
+  dependencies:
+    babel-plugin-jest-hoist "^27.0.6"
+    babel-preset-current-node-syntax "^1.0.0"
 
 bail@^1.0.0:
   version "1.0.5"
@@ -2646,6 +3133,11 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
+browser-process-hrtime@^1.0.0:
+  version "1.0.0"
+  resolved "http://npm.wpt.la/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
+  integrity sha1-PJtLfXgsgSHlbxAQbYTA0P/JRiY=
+
 browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.16.1, browserslist@^4.16.6, browserslist@^4.6.1:
   version "4.16.7"
   resolved "http://npm.wpt.la/browserslist/-/browserslist-4.16.7.tgz#108b0d1ef33c4af1b587c54f390e7041178e4335"
@@ -2656,6 +3148,13 @@ browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.16.1, browserslist@^4
     electron-to-chromium "^1.3.793"
     escalade "^3.1.1"
     node-releases "^1.1.73"
+
+bser@2.1.1:
+  version "2.1.1"
+  resolved "http://npm.wpt.la/bser/-/bser-2.1.1.tgz#e6787da20ece9d07998533cfd9de6f5c38f4bc05"
+  integrity sha1-5nh9og7OnQeZhTPP2d5vXDj0vAU=
+  dependencies:
+    node-int64 "^0.4.0"
 
 buffer-equal@^1.0.0:
   version "1.0.0"
@@ -2846,6 +3345,11 @@ chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+char-regex@^1.0.2:
+  version "1.0.2"
+  resolved "http://npm.wpt.la/char-regex/-/char-regex-1.0.2.tgz#d744358226217f981ed58f479b1d6bcc29545dcf"
+  integrity sha1-10Q1giYhf5ge1Y9Hmx1rzClUXc8=
+
 character-entities-html4@^1.0.0:
   version "1.1.4"
   resolved "http://npm.wpt.la/character-entities-html4/-/character-entities-html4-1.1.4.tgz#0e64b0a3753ddbf1fdc044c5fd01d0199a02e125"
@@ -2885,6 +3389,16 @@ ci-info@^2.0.0:
   version "2.0.0"
   resolved "http://npm.wpt.la/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha1-Z6npZL4xpR4V5QENWObxKDQAL0Y=
+
+ci-info@^3.1.1:
+  version "3.2.0"
+  resolved "http://npm.wpt.la/ci-info/-/ci-info-3.2.0.tgz#2876cb948a498797b5236f0095bc057d0dca38b6"
+  integrity sha1-KHbLlIpJh5e1I28AlbwFfQ3KOLY=
+
+cjs-module-lexer@^1.0.0:
+  version "1.2.2"
+  resolved "http://npm.wpt.la/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
+  integrity sha1-n4S6MkSlEvOlTlJ36O70xImGTkA=
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -2977,6 +3491,11 @@ cloneable-readable@^1.0.0:
     process-nextick-args "^2.0.0"
     readable-stream "^2.3.5"
 
+co@^4.6.0:
+  version "4.6.0"
+  resolved "http://npm.wpt.la/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
+  integrity sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
+
 coa@^2.0.2:
   version "2.0.2"
   resolved "http://npm.wpt.la/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -2995,6 +3514,11 @@ collapse-white-space@^1.0.2:
   version "1.0.6"
   resolved "http://npm.wpt.la/collapse-white-space/-/collapse-white-space-1.0.6.tgz#e63629c0016665792060dbbeb79c42239d2c5287"
   integrity sha1-5jYpwAFmZXkgYNu+t5xCI50sUoc=
+
+collect-v8-coverage@^1.0.0:
+  version "1.0.1"
+  resolved "http://npm.wpt.la/collect-v8-coverage/-/collect-v8-coverage-1.0.1.tgz#cc2c8e94fc18bbdffe64d6534570c8a673b27f59"
+  integrity sha1-zCyOlPwYu9/+ZNZTRXDIpnOyf1k=
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3054,7 +3578,7 @@ colorette@^1.2.1, colorette@^1.2.2:
   resolved "http://npm.wpt.la/colorette/-/colorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
   integrity sha1-y8x51emcrqLb8Q6zom/Ys+as+pQ=
 
-combined-stream@^1.0.6, combined-stream@~1.0.6:
+combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "http://npm.wpt.la/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
   integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
@@ -3115,7 +3639,7 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   resolved "http://npm.wpt.la/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
-convert-source-map@^1.5.0, convert-source-map@^1.7.0:
+convert-source-map@^1.4.0, convert-source-map@^1.5.0, convert-source-map@^1.6.0, convert-source-map@^1.7.0:
   version "1.8.0"
   resolved "http://npm.wpt.la/convert-source-map/-/convert-source-map-1.8.0.tgz#f3373c32d21b4d780dd8004514684fb791ca4369"
   integrity sha1-8zc8MtIbTXgN2ABFFGhPt5HKQ2k=
@@ -3194,7 +3718,7 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.0, cross-spawn@^7.0.2:
+cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "http://npm.wpt.la/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha1-9zqFudXUHQRVUcF34ogtSshXKKY=
@@ -3375,6 +3899,23 @@ csso@^4.0.2:
   dependencies:
     css-tree "^1.1.2"
 
+cssom@^0.4.4:
+  version "0.4.4"
+  resolved "http://npm.wpt.la/cssom/-/cssom-0.4.4.tgz#5a66cf93d2d0b661d80bf6a44fb65f5c2e4e0a10"
+  integrity sha1-WmbPk9LQtmHYC/akT7ZfXC5OChA=
+
+cssom@~0.3.6:
+  version "0.3.8"
+  resolved "http://npm.wpt.la/cssom/-/cssom-0.3.8.tgz#9f1276f5b2b463f2114d3f2c75250af8c1a36f4a"
+  integrity sha1-nxJ29bK0Y/IRTT8sdSUK+MGjb0o=
+
+cssstyle@^2.3.0:
+  version "2.3.0"
+  resolved "http://npm.wpt.la/cssstyle/-/cssstyle-2.3.0.tgz#ff665a0ddbdc31864b09647f34163443d90b0852"
+  integrity sha1-/2ZaDdvcMYZLCWR/NBY0Q9kLCFI=
+  dependencies:
+    cssom "~0.3.6"
+
 csstype@^3.0.2:
   version "3.0.8"
   resolved "http://npm.wpt.la/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
@@ -3399,6 +3940,15 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+data-urls@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm.wpt.la/data-urls/-/data-urls-2.0.0.tgz#156485a72963a970f5d5821aaf642bef2bf2db9b"
+  integrity sha1-FWSFpyljqXD11YIar2Qr7yvy25s=
+  dependencies:
+    abab "^2.0.3"
+    whatwg-mimetype "^2.3.0"
+    whatwg-url "^8.0.0"
+
 date-fns@2.x:
   version "2.23.0"
   resolved "http://npm.wpt.la/date-fns/-/date-fns-2.23.0.tgz#4e886c941659af0cf7b30fafdd1eaa37e88788a9"
@@ -3408,6 +3958,13 @@ dayjs@1.x:
   version "1.10.6"
   resolved "http://npm.wpt.la/dayjs/-/dayjs-1.10.6.tgz#288b2aa82f2d8418a6c9d4df5898c0737ad02a63"
   integrity sha1-KIsqqC8thBimydTfWJjAc3rQKmM=
+
+debug@4, debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
+  version "4.3.2"
+  resolved "http://npm.wpt.la/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
+  dependencies:
+    ms "2.1.2"
 
 debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
@@ -3423,13 +3980,6 @@ debug@^3.2.7:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
-  version "4.3.2"
-  resolved "http://npm.wpt.la/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
-  dependencies:
-    ms "2.1.2"
-
 decamelize-keys@^1.0.0, decamelize-keys@^1.1.0:
   version "1.1.0"
   resolved "http://npm.wpt.la/decamelize-keys/-/decamelize-keys-1.1.0.tgz#d171a87933252807eb3cb61dc1c1445d078df2d9"
@@ -3442,6 +3992,11 @@ decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.2.0:
   version "1.2.0"
   resolved "http://npm.wpt.la/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
+
+decimal.js@^10.2.1:
+  version "10.3.1"
+  resolved "http://npm.wpt.la/decimal.js/-/decimal.js-10.3.1.tgz#d8c3a444a9c6774ba60ca6ad7261c3a94fd5e783"
+  integrity sha1-2MOkRKnGd0umDKatcmHDqU/V54M=
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -3465,7 +4020,7 @@ deep-extend@^0.6.0:
   resolved "http://npm.wpt.la/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
   integrity sha1-xPp8lUBKF6nD6Mp+FTcxK3NjMKw=
 
-deep-is@^0.1.3:
+deep-is@^0.1.3, deep-is@~0.1.3:
   version "0.1.3"
   resolved "http://npm.wpt.la/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
@@ -3523,6 +4078,16 @@ detect-indent@^5.0.0:
   version "5.0.0"
   resolved "http://npm.wpt.la/detect-indent/-/detect-indent-5.0.0.tgz#3871cc0a6a002e8c3e5b3cf7f336264675f06b9d"
   integrity sha1-OHHMCmoALow+Wzz38zYmRnXwa50=
+
+detect-newline@^3.0.0:
+  version "3.1.0"
+  resolved "http://npm.wpt.la/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
+  integrity sha1-V29d/GOuGhkv8ZLYrTr2MImRtlE=
+
+diff-sequences@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/diff-sequences/-/diff-sequences-27.0.6.tgz#3305cb2e55a033924054695cc66019fd7f8e5723"
+  integrity sha1-MwXLLlWgM5JAVGlcxmAZ/X+OVyM=
 
 dir-glob@^2.2.2:
   version "2.2.2"
@@ -3591,6 +4156,13 @@ domelementtype@^2.0.1:
   resolved "http://npm.wpt.la/domelementtype/-/domelementtype-2.2.0.tgz#9a0b6c2782ed6a1c7323d42267183df9bd8b1d57"
   integrity sha1-mgtsJ4LtahxzI9QiZxg9+b2LHVc=
 
+domexception@^2.0.1:
+  version "2.0.1"
+  resolved "http://npm.wpt.la/domexception/-/domexception-2.0.1.tgz#fb44aefba793e1574b0af6aed2801d057529f304"
+  integrity sha1-+0Su+6eT4VdLCvau0oAdBXUp8wQ=
+  dependencies:
+    webidl-conversions "^5.0.0"
+
 domhandler@^2.3.0:
   version "2.4.2"
   resolved "http://npm.wpt.la/domhandler/-/domhandler-2.4.2.tgz#8805097e933d65e85546f726d60f5eb88b44f803"
@@ -3654,6 +4226,11 @@ electron-to-chromium@^1.3.793:
   version "1.3.795"
   resolved "http://npm.wpt.la/electron-to-chromium/-/electron-to-chromium-1.3.795.tgz#91f09b4c77f8dab562dd592ce929b009201c24ff"
   integrity sha1-kfCbTHf42rVi3Vks6SmwCSAcJP8=
+
+emittery@^0.8.1:
+  version "0.8.1"
+  resolved "http://npm.wpt.la/emittery/-/emittery-0.8.1.tgz#bb23cc86d03b30aa75a7f734819dee2e1ba70860"
+  integrity sha1-uyPMhtA7MKp1p/c0gZ3uLhunCGA=
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -3764,10 +4341,27 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "http://npm.wpt.la/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+escape-string-regexp@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm.wpt.la/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha1-owME6Z2qMuI7L9IPUbq9B8/8o0Q=
+
 escape-string-regexp@^4.0.0:
   version "4.0.0"
   resolved "http://npm.wpt.la/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
+
+escodegen@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm.wpt.la/escodegen/-/escodegen-2.0.0.tgz#5e32b12833e8aa8fa35e1bf0befa89380484c7dd"
+  integrity sha1-XjKxKDPoqo+jXhvwvvqJOASEx90=
+  dependencies:
+    esprima "^4.0.1"
+    estraverse "^5.2.0"
+    esutils "^2.0.2"
+    optionator "^0.8.1"
+  optionalDependencies:
+    source-map "~0.6.1"
 
 eslint-ast-utils@^1.1.0:
   version "1.1.0"
@@ -3963,7 +4557,7 @@ eslint-rule-docs@^1.1.5:
   resolved "http://npm.wpt.la/eslint-rule-docs/-/eslint-rule-docs-1.1.231.tgz#648b978bc5a1bb740be5f28d07470f0926b9cdf1"
   integrity sha1-ZIuXi8Whu3QL5fKNB0cPCSa5zfE=
 
-eslint-scope@^5.1.1:
+eslint-scope@^5.0.0, eslint-scope@^5.1.1:
   version "5.1.1"
   resolved "http://npm.wpt.la/eslint-scope/-/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
   integrity sha1-54blmmbLkrP2wfsNUIqrF0hI9Iw=
@@ -4061,7 +4655,7 @@ espree@^7.3.0, espree@^7.3.1:
     acorn-jsx "^5.3.1"
     eslint-visitor-keys "^1.3.0"
 
-esprima@^4.0.0:
+esprima@^4.0.0, esprima@^4.0.1:
   version "4.0.1"
   resolved "http://npm.wpt.la/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha1-E7BM2z5sXRnfkatph6hpVhmwqnE=
@@ -4143,6 +4737,21 @@ execa@^4.0.0:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
+execa@^5.0.0:
+  version "5.1.1"
+  resolved "http://npm.wpt.la/execa/-/execa-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
+  integrity sha1-+ArZy/Qpj3vR1MlVXCHpN0HEEd0=
+  dependencies:
+    cross-spawn "^7.0.3"
+    get-stream "^6.0.0"
+    human-signals "^2.1.0"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.1"
+    onetime "^5.1.2"
+    signal-exit "^3.0.3"
+    strip-final-newline "^2.0.0"
+
 execall@^1.0.0:
   version "1.0.0"
   resolved "http://npm.wpt.la/execall/-/execall-1.0.0.tgz#73d0904e395b3cab0658b08d09ec25307f29bb73"
@@ -4157,6 +4766,11 @@ execall@^2.0.0:
   dependencies:
     clone-regexp "^2.1.0"
 
+exit@^0.1.2:
+  version "0.1.2"
+  resolved "http://npm.wpt.la/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
+  integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
+
 expand-brackets@^2.1.4:
   version "2.1.4"
   resolved "http://npm.wpt.la/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -4169,6 +4783,18 @@ expand-brackets@^2.1.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+expect@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/expect/-/expect-27.0.6.tgz#a4d74fbe27222c718fff68ef49d78e26a8fd4c05"
+  integrity sha1-pNdPviciLHGP/2jvSdeOJqj9TAU=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    ansi-styles "^5.0.0"
+    jest-get-type "^27.0.6"
+    jest-matcher-utils "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-regex-util "^27.0.6"
 
 extend-shallow@^1.1.2:
   version "1.1.4"
@@ -4269,7 +4895,7 @@ fast-json-stable-stringify@^2.0.0:
   resolved "http://npm.wpt.la/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
   integrity sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM=
 
-fast-levenshtein@^2.0.6:
+fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   version "2.0.6"
   resolved "http://npm.wpt.la/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
@@ -4348,6 +4974,13 @@ father-build@^1.19.6:
     update-notifier "3.0.0"
     vinyl-fs "3.0.3"
     yargs-parser "13.1.2"
+
+fb-watchman@^2.0.0:
+  version "2.0.1"
+  resolved "http://npm.wpt.la/fb-watchman/-/fb-watchman-2.0.1.tgz#fc84fb39d2709cf3ff6d743706157bb5708a8a85"
+  integrity sha1-/IT7OdJwnPP/bXQ3BhV7tXCKioU=
+  dependencies:
+    bser "2.1.1"
 
 figures@^2.0.0:
   version "2.0.0"
@@ -4485,6 +5118,15 @@ fork-stream@^0.0.4:
   resolved "http://npm.wpt.la/fork-stream/-/fork-stream-0.0.4.tgz#db849fce77f6708a5f8f386ae533a0907b54ae70"
   integrity sha1-24Sfznf2cIpfjzhq5TOgkHtUrnA=
 
+form-data@^3.0.0:
+  version "3.0.1"
+  resolved "http://npm.wpt.la/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
+  integrity sha1-69U3kbeDVqma+aMA1CgsTV65dV8=
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
 form-data@~2.3.2:
   version "2.3.3"
   resolved "http://npm.wpt.la/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
@@ -4523,15 +5165,15 @@ fs.realpath@^1.0.0:
   resolved "http://npm.wpt.la/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
+fsevents@^2.3.2, fsevents@~2.3.2:
+  version "2.3.2"
+  resolved "http://npm.wpt.la/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=
+
 fsevents@~2.1.2:
   version "2.1.3"
   resolved "http://npm.wpt.la/fsevents/-/fsevents-2.1.3.tgz#fb738703ae8d2f9fe900c33836ddebee8b97f23e"
   integrity sha1-+3OHA66NL5/pAMM4Nt3r7ouX8j4=
-
-fsevents@~2.3.2:
-  version "2.3.2"
-  resolved "http://npm.wpt.la/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
-  integrity sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -4583,6 +5225,11 @@ get-intrinsic@^1.0.2, get-intrinsic@^1.1.0, get-intrinsic@^1.1.1:
     has "^1.0.3"
     has-symbols "^1.0.1"
 
+get-package-type@^0.1.0:
+  version "0.1.0"
+  resolved "http://npm.wpt.la/get-package-type/-/get-package-type-0.1.0.tgz#8de2d803cff44df3bc6c456e6668b36c3926e11a"
+  integrity sha1-jeLYA8/0TfO8bEVuZmizbDkm4Ro=
+
 get-stdin@^6.0.0:
   version "6.0.0"
   resolved "http://npm.wpt.la/get-stdin/-/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
@@ -4611,6 +5258,11 @@ get-stream@^5.0.0, get-stream@^5.1.0:
   integrity sha1-SWaheV7lrOZecGxLe+txJX1uItM=
   dependencies:
     pump "^3.0.0"
+
+get-stream@^6.0.0:
+  version "6.0.1"
+  resolved "http://npm.wpt.la/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
+  integrity sha1-omLY7vZ6ztV8KFKtYWdSakPL97c=
 
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
@@ -4660,7 +5312,7 @@ glob-to-regexp@^0.3.0:
   resolved "http://npm.wpt.la/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
   integrity sha1-jFoUlNIGbFcMw7/kSWF1rMTVAqs=
 
-glob@^7.0.5, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
+glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.1.7"
   resolved "http://npm.wpt.la/glob/-/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
   integrity sha1-Oxk+kjPwHULQs/eClLvutBj5SpA=
@@ -4766,6 +5418,11 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2
   version "4.2.6"
   resolved "http://npm.wpt.la/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha1-/wQLKwhTsjw9MQJ1I3BvGIXXa+4=
+
+graceful-fs@^4.2.4:
+  version "4.2.8"
+  resolved "http://npm.wpt.la/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
+  integrity sha1-5BK40z9eAGWTy9PO5t+fLOu+gCo=
 
 gulp-if@2.0.2:
   version "2.0.2"
@@ -4962,6 +5619,18 @@ hsla-regex@^1.0.0:
   resolved "http://npm.wpt.la/hsla-regex/-/hsla-regex-1.0.0.tgz#c1ce7a3168c8c6614033a4b5f7877f3b225f9c38"
   integrity sha1-wc56MWjIxmFAM6S194d/OyJfnDg=
 
+html-encoding-sniffer@^2.0.1:
+  version "2.0.1"
+  resolved "http://npm.wpt.la/html-encoding-sniffer/-/html-encoding-sniffer-2.0.1.tgz#42a6dc4fd33f00281176e8b23759ca4e4fa185f3"
+  integrity sha1-QqbcT9M/ACgRduiyN1nKTk+hhfM=
+  dependencies:
+    whatwg-encoding "^1.0.5"
+
+html-escaper@^2.0.0:
+  version "2.0.2"
+  resolved "http://npm.wpt.la/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
+  integrity sha1-39YAJ9o2o238viNiYsAKWCJoFFM=
+
 html-tags@^2.0.0:
   version "2.0.0"
   resolved "http://npm.wpt.la/html-tags/-/html-tags-2.0.0.tgz#10b30a386085f43cede353cc8fa7cb0deeea668b"
@@ -4989,6 +5658,15 @@ http-cache-semantics@^4.0.0:
   resolved "http://npm.wpt.la/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz#49e91c5cbf36c9b94bcfcd71c23d5249ec74e390"
   integrity sha1-SekcXL82yblLz81xwj1SSex045A=
 
+http-proxy-agent@^4.0.1:
+  version "4.0.1"
+  resolved "http://npm.wpt.la/http-proxy-agent/-/http-proxy-agent-4.0.1.tgz#8a8c8ef7f5932ccf953c296ca8291b95aa74aa3a"
+  integrity sha1-ioyO9/WTLM+VPClsqCkblap0qjo=
+  dependencies:
+    "@tootallnate/once" "1"
+    agent-base "6"
+    debug "4"
+
 http-signature@~1.2.0:
   version "1.2.0"
   resolved "http://npm.wpt.la/http-signature/-/http-signature-1.2.0.tgz#9aecd925114772f3d95b65a60abb8f7c18fbace1"
@@ -4998,10 +5676,30 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
+https-proxy-agent@^5.0.0:
+  version "5.0.0"
+  resolved "http://npm.wpt.la/https-proxy-agent/-/https-proxy-agent-5.0.0.tgz#e2a90542abb68a762e0a0850f6c9edadfd8506b2"
+  integrity sha1-4qkFQqu2inYuCghQ9sntrf2FBrI=
+  dependencies:
+    agent-base "6"
+    debug "4"
+
 human-signals@^1.1.1:
   version "1.1.1"
   resolved "http://npm.wpt.la/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha1-xbHNFPUK6uCatsWf5jujOV/k36M=
+
+human-signals@^2.1.0:
+  version "2.1.0"
+  resolved "http://npm.wpt.la/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
+  integrity sha1-3JH8ukLk0G5Kuu0zs+ejwC9RTqA=
+
+iconv-lite@0.4.24:
+  version "0.4.24"
+  resolved "http://npm.wpt.la/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
+  integrity sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=
+  dependencies:
+    safer-buffer ">= 2.1.2 < 3"
 
 icss-replace-symbols@1.1.0, icss-replace-symbols@^1.1.0:
   version "1.1.0"
@@ -5081,6 +5779,14 @@ import-lazy@^4.0.0:
   version "4.0.0"
   resolved "http://npm.wpt.la/import-lazy/-/import-lazy-4.0.0.tgz#e8eb627483a0a43da3c03f3e35548be5cb0cc153"
   integrity sha1-6OtidIOgpD2jwD8+NVSL5csMwVM=
+
+import-local@^3.0.2:
+  version "3.0.2"
+  resolved "http://npm.wpt.la/import-local/-/import-local-3.0.2.tgz#a8cfd0431d1de4a2199703d003e3e62364fa6db6"
+  integrity sha1-qM/QQx0d5KIZlwPQA+PmI2T6bbY=
+  dependencies:
+    pkg-dir "^4.2.0"
+    resolve-cwd "^3.0.0"
 
 import-modules@^2.0.0:
   version "2.1.0"
@@ -5245,6 +5951,13 @@ is-ci@^2.0.0:
   dependencies:
     ci-info "^2.0.0"
 
+is-ci@^3.0.0:
+  version "3.0.0"
+  resolved "http://npm.wpt.la/is-ci/-/is-ci-3.0.0.tgz#c7e7be3c9d8eef7d0fa144390bd1e4b88dc4c994"
+  integrity sha1-x+e+PJ2O730PoUQ5C9HkuI3EyZQ=
+  dependencies:
+    ci-info "^3.1.1"
+
 is-color-stop@^1.0.0:
   version "1.1.0"
   resolved "http://npm.wpt.la/is-color-stop/-/is-color-stop-1.1.0.tgz#cfff471aee4dd5c9e158598fbe12967b5cdad345"
@@ -5345,6 +6058,11 @@ is-fullwidth-code-point@^3.0.0:
   resolved "http://npm.wpt.la/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
   integrity sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=
 
+is-generator-fn@^2.0.0:
+  version "2.1.0"
+  resolved "http://npm.wpt.la/is-generator-fn/-/is-generator-fn-2.1.0.tgz#7d140adc389aaf3011a8f2a2a4cfa6faadffb118"
+  integrity sha1-fRQK3DiarzARqPKipM+m+q3/sRg=
+
 is-glob@^3.1.0:
   version "3.1.0"
   resolved "http://npm.wpt.la/is-glob/-/is-glob-3.1.0.tgz#7ba5ae24217804ac70707b96922567486cc3e84a"
@@ -5442,6 +6160,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   integrity sha1-LBY7P6+xtgbZ0Xko8FwqHDjgdnc=
   dependencies:
     isobject "^3.0.1"
+
+is-potential-custom-element-name@^1.0.1:
+  version "1.0.1"
+  resolved "http://npm.wpt.la/is-potential-custom-element-name/-/is-potential-custom-element-name-1.0.1.tgz#171ed6f19e3ac554394edf78caa05784a45bebb5"
+  integrity sha1-Fx7W8Z46xVQ5Tt94yqBXhKRb67U=
 
 is-reference@^1.2.1:
   version "1.2.1"
@@ -5596,6 +6319,11 @@ istanbul-lib-coverage@^2.0.5:
   resolved "http://npm.wpt.la/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.5.tgz#675f0ab69503fad4b1d849f736baaca803344f49"
   integrity sha1-Z18KtpUD+tSx2En3NrqsqAM0T0k=
 
+istanbul-lib-coverage@^3.0.0:
+  version "3.0.0"
+  resolved "http://npm.wpt.la/istanbul-lib-coverage/-/istanbul-lib-coverage-3.0.0.tgz#f5944a37c70b550b02a78a5c3b2055b280cec8ec"
+  integrity sha1-9ZRKN8cLVQsCp4pcOyBVsoDOyOw=
+
 istanbul-lib-instrument@^3.3.0:
   version "3.3.0"
   resolved "http://npm.wpt.la/istanbul-lib-instrument/-/istanbul-lib-instrument-3.3.0.tgz#a5f63d91f0bbc0c3e479ef4c5de027335ec6d630"
@@ -5609,6 +6337,433 @@ istanbul-lib-instrument@^3.3.0:
     istanbul-lib-coverage "^2.0.5"
     semver "^6.0.0"
 
+istanbul-lib-instrument@^4.0.0, istanbul-lib-instrument@^4.0.3:
+  version "4.0.3"
+  resolved "http://npm.wpt.la/istanbul-lib-instrument/-/istanbul-lib-instrument-4.0.3.tgz#873c6fff897450118222774696a3f28902d77c1d"
+  integrity sha1-hzxv/4l0UBGCIndGlqPyiQLXfB0=
+  dependencies:
+    "@babel/core" "^7.7.5"
+    "@istanbuljs/schema" "^0.1.2"
+    istanbul-lib-coverage "^3.0.0"
+    semver "^6.3.0"
+
+istanbul-lib-report@^3.0.0:
+  version "3.0.0"
+  resolved "http://npm.wpt.la/istanbul-lib-report/-/istanbul-lib-report-3.0.0.tgz#7518fe52ea44de372f460a76b5ecda9ffb73d8a6"
+  integrity sha1-dRj+UupE3jcvRgp2tezan/tz2KY=
+  dependencies:
+    istanbul-lib-coverage "^3.0.0"
+    make-dir "^3.0.0"
+    supports-color "^7.1.0"
+
+istanbul-lib-source-maps@^4.0.0:
+  version "4.0.0"
+  resolved "http://npm.wpt.la/istanbul-lib-source-maps/-/istanbul-lib-source-maps-4.0.0.tgz#75743ce6d96bb86dc7ee4352cf6366a23f0b1ad9"
+  integrity sha1-dXQ85tlruG3H7kNSz2Nmoj8LGtk=
+  dependencies:
+    debug "^4.1.1"
+    istanbul-lib-coverage "^3.0.0"
+    source-map "^0.6.1"
+
+istanbul-reports@^3.0.2:
+  version "3.0.2"
+  resolved "http://npm.wpt.la/istanbul-reports/-/istanbul-reports-3.0.2.tgz#d593210e5000683750cb09fc0644e4b6e27fd53b"
+  integrity sha1-1ZMhDlAAaDdQywn8BkTktuJ/1Ts=
+  dependencies:
+    html-escaper "^2.0.0"
+    istanbul-lib-report "^3.0.0"
+
+jest-changed-files@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-changed-files/-/jest-changed-files-27.0.6.tgz#bed6183fcdea8a285482e3b50a9a7712d49a7a8b"
+  integrity sha1-vtYYP83qiihUguO1Cpp3EtSaeos=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    execa "^5.0.0"
+    throat "^6.0.1"
+
+jest-circus@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-circus/-/jest-circus-27.0.6.tgz#dd4df17c4697db6a2c232aaad4e9cec666926668"
+  integrity sha1-3U3xfEaX22osIyqq1OnOxmaSZmg=
+  dependencies:
+    "@jest/environment" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    co "^4.6.0"
+    dedent "^0.7.0"
+    expect "^27.0.6"
+    is-generator-fn "^2.0.0"
+    jest-each "^27.0.6"
+    jest-matcher-utils "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-runtime "^27.0.6"
+    jest-snapshot "^27.0.6"
+    jest-util "^27.0.6"
+    pretty-format "^27.0.6"
+    slash "^3.0.0"
+    stack-utils "^2.0.3"
+    throat "^6.0.1"
+
+jest-cli@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-cli/-/jest-cli-27.0.6.tgz#d021e5f4d86d6a212450d4c7b86cb219f1e6864f"
+  integrity sha1-0CHl9NhtaiEkUNTHuGyyGfHmhk8=
+  dependencies:
+    "@jest/core" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    chalk "^4.0.0"
+    exit "^0.1.2"
+    graceful-fs "^4.2.4"
+    import-local "^3.0.2"
+    jest-config "^27.0.6"
+    jest-util "^27.0.6"
+    jest-validate "^27.0.6"
+    prompts "^2.0.1"
+    yargs "^16.0.3"
+
+jest-config@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-config/-/jest-config-27.0.6.tgz#119fb10f149ba63d9c50621baa4f1f179500277f"
+  integrity sha1-EZ+xDxSbpj2cUGIbqk8fF5UAJ38=
+  dependencies:
+    "@babel/core" "^7.1.0"
+    "@jest/test-sequencer" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    babel-jest "^27.0.6"
+    chalk "^4.0.0"
+    deepmerge "^4.2.2"
+    glob "^7.1.1"
+    graceful-fs "^4.2.4"
+    is-ci "^3.0.0"
+    jest-circus "^27.0.6"
+    jest-environment-jsdom "^27.0.6"
+    jest-environment-node "^27.0.6"
+    jest-get-type "^27.0.6"
+    jest-jasmine2 "^27.0.6"
+    jest-regex-util "^27.0.6"
+    jest-resolve "^27.0.6"
+    jest-runner "^27.0.6"
+    jest-util "^27.0.6"
+    jest-validate "^27.0.6"
+    micromatch "^4.0.4"
+    pretty-format "^27.0.6"
+
+jest-diff@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-diff/-/jest-diff-27.0.6.tgz#4a7a19ee6f04ad70e0e3388f35829394a44c7b5e"
+  integrity sha1-SnoZ7m8ErXDg4ziPNYKTlKRMe14=
+  dependencies:
+    chalk "^4.0.0"
+    diff-sequences "^27.0.6"
+    jest-get-type "^27.0.6"
+    pretty-format "^27.0.6"
+
+jest-docblock@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-docblock/-/jest-docblock-27.0.6.tgz#cc78266acf7fe693ca462cbbda0ea4e639e4e5f3"
+  integrity sha1-zHgmas9/5pPKRiy72g6k5jnk5fM=
+  dependencies:
+    detect-newline "^3.0.0"
+
+jest-each@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-each/-/jest-each-27.0.6.tgz#cee117071b04060158dc8d9a66dc50ad40ef453b"
+  integrity sha1-zuEXBxsEBgFY3I2aZtxQrUDvRTs=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    chalk "^4.0.0"
+    jest-get-type "^27.0.6"
+    jest-util "^27.0.6"
+    pretty-format "^27.0.6"
+
+jest-environment-jsdom@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-environment-jsdom/-/jest-environment-jsdom-27.0.6.tgz#f66426c4c9950807d0a9f209c590ce544f73291f"
+  integrity sha1-9mQmxMmVCAfQqfIJxZDOVE9zKR8=
+  dependencies:
+    "@jest/environment" "^27.0.6"
+    "@jest/fake-timers" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    jest-mock "^27.0.6"
+    jest-util "^27.0.6"
+    jsdom "^16.6.0"
+
+jest-environment-node@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-environment-node/-/jest-environment-node-27.0.6.tgz#a6699b7ceb52e8d68138b9808b0c404e505f3e07"
+  integrity sha1-pmmbfOtS6NaBOLmAiwxATlBfPgc=
+  dependencies:
+    "@jest/environment" "^27.0.6"
+    "@jest/fake-timers" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    jest-mock "^27.0.6"
+    jest-util "^27.0.6"
+
+jest-get-type@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-get-type/-/jest-get-type-27.0.6.tgz#0eb5c7f755854279ce9b68a9f1a4122f69047cfe"
+  integrity sha1-DrXH91WFQnnOm2ip8aQSL2kEfP4=
+
+jest-haste-map@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-haste-map/-/jest-haste-map-27.0.6.tgz#4683a4e68f6ecaa74231679dca237279562c8dc7"
+  integrity sha1-RoOk5o9uyqdCMWedyiNyeVYsjcc=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    "@types/graceful-fs" "^4.1.2"
+    "@types/node" "*"
+    anymatch "^3.0.3"
+    fb-watchman "^2.0.0"
+    graceful-fs "^4.2.4"
+    jest-regex-util "^27.0.6"
+    jest-serializer "^27.0.6"
+    jest-util "^27.0.6"
+    jest-worker "^27.0.6"
+    micromatch "^4.0.4"
+    walker "^1.0.7"
+  optionalDependencies:
+    fsevents "^2.3.2"
+
+jest-jasmine2@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-jasmine2/-/jest-jasmine2-27.0.6.tgz#fd509a9ed3d92bd6edb68a779f4738b100655b37"
+  integrity sha1-/VCantPZK9bttop3n0c4sQBlWzc=
+  dependencies:
+    "@babel/traverse" "^7.1.0"
+    "@jest/environment" "^27.0.6"
+    "@jest/source-map" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    co "^4.6.0"
+    expect "^27.0.6"
+    is-generator-fn "^2.0.0"
+    jest-each "^27.0.6"
+    jest-matcher-utils "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-runtime "^27.0.6"
+    jest-snapshot "^27.0.6"
+    jest-util "^27.0.6"
+    pretty-format "^27.0.6"
+    throat "^6.0.1"
+
+jest-leak-detector@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-leak-detector/-/jest-leak-detector-27.0.6.tgz#545854275f85450d4ef4b8fe305ca2a26450450f"
+  integrity sha1-VFhUJ1+FRQ1O9Lj+MFyiomRQRQ8=
+  dependencies:
+    jest-get-type "^27.0.6"
+    pretty-format "^27.0.6"
+
+jest-matcher-utils@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-matcher-utils/-/jest-matcher-utils-27.0.6.tgz#2a8da1e86c620b39459f4352eaa255f0d43e39a9"
+  integrity sha1-Ko2h6GxiCzlFn0NS6qJV8NQ+Oak=
+  dependencies:
+    chalk "^4.0.0"
+    jest-diff "^27.0.6"
+    jest-get-type "^27.0.6"
+    pretty-format "^27.0.6"
+
+jest-message-util@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-message-util/-/jest-message-util-27.0.6.tgz#158bcdf4785706492d164a39abca6a14da5ab8b5"
+  integrity sha1-FYvN9HhXBkktFko5q8pqFNpauLU=
+  dependencies:
+    "@babel/code-frame" "^7.12.13"
+    "@jest/types" "^27.0.6"
+    "@types/stack-utils" "^2.0.0"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.4"
+    micromatch "^4.0.4"
+    pretty-format "^27.0.6"
+    slash "^3.0.0"
+    stack-utils "^2.0.3"
+
+jest-mock@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-mock/-/jest-mock-27.0.6.tgz#0efdd40851398307ba16778728f6d34d583e3467"
+  integrity sha1-Dv3UCFE5gwe6FneHKPbTTVg+NGc=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+
+jest-pnp-resolver@^1.2.2:
+  version "1.2.2"
+  resolved "http://npm.wpt.la/jest-pnp-resolver/-/jest-pnp-resolver-1.2.2.tgz#b704ac0ae028a89108a4d040b3f919dfddc8e33c"
+  integrity sha1-twSsCuAoqJEIpNBAs/kZ393I4zw=
+
+jest-regex-util@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-regex-util/-/jest-regex-util-27.0.6.tgz#02e112082935ae949ce5d13b2675db3d8c87d9c5"
+  integrity sha1-AuESCCk1rpSc5dE7JnXbPYyH2cU=
+
+jest-resolve-dependencies@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-resolve-dependencies/-/jest-resolve-dependencies-27.0.6.tgz#3e619e0ef391c3ecfcf6ef4056207a3d2be3269f"
+  integrity sha1-PmGeDvORw+z89u9AViB6PSvjJp8=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    jest-regex-util "^27.0.6"
+    jest-snapshot "^27.0.6"
+
+jest-resolve@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-resolve/-/jest-resolve-27.0.6.tgz#e90f436dd4f8fbf53f58a91c42344864f8e55bff"
+  integrity sha1-6Q9DbdT4+/U/WKkcQjRIZPjlW/8=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    chalk "^4.0.0"
+    escalade "^3.1.1"
+    graceful-fs "^4.2.4"
+    jest-pnp-resolver "^1.2.2"
+    jest-util "^27.0.6"
+    jest-validate "^27.0.6"
+    resolve "^1.20.0"
+    slash "^3.0.0"
+
+jest-runner@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-runner/-/jest-runner-27.0.6.tgz#1325f45055539222bbc7256a6976e993ad2f9520"
+  integrity sha1-EyX0UFVTkiK7xyVqaXbpk60vlSA=
+  dependencies:
+    "@jest/console" "^27.0.6"
+    "@jest/environment" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/transform" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    emittery "^0.8.1"
+    exit "^0.1.2"
+    graceful-fs "^4.2.4"
+    jest-docblock "^27.0.6"
+    jest-environment-jsdom "^27.0.6"
+    jest-environment-node "^27.0.6"
+    jest-haste-map "^27.0.6"
+    jest-leak-detector "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-resolve "^27.0.6"
+    jest-runtime "^27.0.6"
+    jest-util "^27.0.6"
+    jest-worker "^27.0.6"
+    source-map-support "^0.5.6"
+    throat "^6.0.1"
+
+jest-runtime@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-runtime/-/jest-runtime-27.0.6.tgz#45877cfcd386afdd4f317def551fc369794c27c9"
+  integrity sha1-RYd8/NOGr91PMX3vVR/DaXlMJ8k=
+  dependencies:
+    "@jest/console" "^27.0.6"
+    "@jest/environment" "^27.0.6"
+    "@jest/fake-timers" "^27.0.6"
+    "@jest/globals" "^27.0.6"
+    "@jest/source-map" "^27.0.6"
+    "@jest/test-result" "^27.0.6"
+    "@jest/transform" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+    cjs-module-lexer "^1.0.0"
+    collect-v8-coverage "^1.0.0"
+    exit "^0.1.2"
+    glob "^7.1.3"
+    graceful-fs "^4.2.4"
+    jest-haste-map "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-mock "^27.0.6"
+    jest-regex-util "^27.0.6"
+    jest-resolve "^27.0.6"
+    jest-snapshot "^27.0.6"
+    jest-util "^27.0.6"
+    jest-validate "^27.0.6"
+    slash "^3.0.0"
+    strip-bom "^4.0.0"
+    yargs "^16.0.3"
+
+jest-serializer@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-serializer/-/jest-serializer-27.0.6.tgz#93a6c74e0132b81a2d54623251c46c498bb5bec1"
+  integrity sha1-k6bHTgEyuBotVGIyUcRsSYu1vsE=
+  dependencies:
+    "@types/node" "*"
+    graceful-fs "^4.2.4"
+
+jest-snapshot@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-snapshot/-/jest-snapshot-27.0.6.tgz#f4e6b208bd2e92e888344d78f0f650bcff05a4bf"
+  integrity sha1-9OayCL0ukuiINE148PZQvP8FpL8=
+  dependencies:
+    "@babel/core" "^7.7.2"
+    "@babel/generator" "^7.7.2"
+    "@babel/parser" "^7.7.2"
+    "@babel/plugin-syntax-typescript" "^7.7.2"
+    "@babel/traverse" "^7.7.2"
+    "@babel/types" "^7.0.0"
+    "@jest/transform" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/babel__traverse" "^7.0.4"
+    "@types/prettier" "^2.1.5"
+    babel-preset-current-node-syntax "^1.0.0"
+    chalk "^4.0.0"
+    expect "^27.0.6"
+    graceful-fs "^4.2.4"
+    jest-diff "^27.0.6"
+    jest-get-type "^27.0.6"
+    jest-haste-map "^27.0.6"
+    jest-matcher-utils "^27.0.6"
+    jest-message-util "^27.0.6"
+    jest-resolve "^27.0.6"
+    jest-util "^27.0.6"
+    natural-compare "^1.4.0"
+    pretty-format "^27.0.6"
+    semver "^7.3.2"
+
+jest-util@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-util/-/jest-util-27.0.6.tgz#e8e04eec159de2f4d5f57f795df9cdc091e50297"
+  integrity sha1-6OBO7BWd4vTV9X95XfnNwJHlApc=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.4"
+    is-ci "^3.0.0"
+    picomatch "^2.2.3"
+
+jest-validate@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-validate/-/jest-validate-27.0.6.tgz#930a527c7a951927df269f43b2dc23262457e2a6"
+  integrity sha1-kwpSfHqVGSffJp9DstwjJiRX4qY=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    camelcase "^6.2.0"
+    chalk "^4.0.0"
+    jest-get-type "^27.0.6"
+    leven "^3.1.0"
+    pretty-format "^27.0.6"
+
+jest-watcher@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-watcher/-/jest-watcher-27.0.6.tgz#89526f7f9edf1eac4e4be989bcb6dec6b8878d9c"
+  integrity sha1-iVJvf57fHqxOS+mJvLbexriHjZw=
+  dependencies:
+    "@jest/test-result" "^27.0.6"
+    "@jest/types" "^27.0.6"
+    "@types/node" "*"
+    ansi-escapes "^4.2.1"
+    chalk "^4.0.0"
+    jest-util "^27.0.6"
+    string-length "^4.0.1"
+
 jest-worker@^26.2.1:
   version "26.6.2"
   resolved "http://npm.wpt.la/jest-worker/-/jest-worker-26.6.2.tgz#7f72cbc4d643c365e27b9fd775f9d0eaa9c7a8ed"
@@ -5617,6 +6772,24 @@ jest-worker@^26.2.1:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jest-worker@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest-worker/-/jest-worker-27.0.6.tgz#a5fdb1e14ad34eb228cfe162d9f729cdbfa28aed"
+  integrity sha1-pf2x4UrTTrIoz+Fi2fcpzb+iiu0=
+  dependencies:
+    "@types/node" "*"
+    merge-stream "^2.0.0"
+    supports-color "^8.0.0"
+
+jest@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/jest/-/jest-27.0.6.tgz#10517b2a628f0409087fbf473db44777d7a04505"
+  integrity sha1-EFF7KmKPBAkIf79HPbRHd9egRQU=
+  dependencies:
+    "@jest/core" "^27.0.6"
+    import-local "^3.0.2"
+    jest-cli "^27.0.6"
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -5635,6 +6808,39 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "http://npm.wpt.la/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
+
+jsdom@^16.6.0:
+  version "16.7.0"
+  resolved "http://npm.wpt.la/jsdom/-/jsdom-16.7.0.tgz#918ae71965424b197c819f8183a754e18977b710"
+  integrity sha1-kYrnGWVCSxl8gZ+Bg6dU4Yl3txA=
+  dependencies:
+    abab "^2.0.5"
+    acorn "^8.2.4"
+    acorn-globals "^6.0.0"
+    cssom "^0.4.4"
+    cssstyle "^2.3.0"
+    data-urls "^2.0.0"
+    decimal.js "^10.2.1"
+    domexception "^2.0.1"
+    escodegen "^2.0.0"
+    form-data "^3.0.0"
+    html-encoding-sniffer "^2.0.1"
+    http-proxy-agent "^4.0.1"
+    https-proxy-agent "^5.0.0"
+    is-potential-custom-element-name "^1.0.1"
+    nwsapi "^2.2.0"
+    parse5 "6.0.1"
+    saxes "^5.0.1"
+    symbol-tree "^3.2.4"
+    tough-cookie "^4.0.0"
+    w3c-hr-time "^1.0.2"
+    w3c-xmlserializer "^2.0.0"
+    webidl-conversions "^6.1.0"
+    whatwg-encoding "^1.0.5"
+    whatwg-mimetype "^2.3.0"
+    whatwg-url "^8.5.0"
+    ws "^7.4.6"
+    xml-name-validator "^3.0.0"
 
 jsesc@^2.5.1:
   version "2.5.2"
@@ -5768,6 +6974,11 @@ kind-of@^6.0.0, kind-of@^6.0.2, kind-of@^6.0.3:
   resolved "http://npm.wpt.la/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
+kleur@^3.0.3:
+  version "3.0.3"
+  resolved "http://npm.wpt.la/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
+  integrity sha1-p5yezIbuHOP6YgbRIWxQHxR/wH4=
+
 known-css-properties@^0.11.0:
   version "0.11.0"
   resolved "http://npm.wpt.la/known-css-properties/-/known-css-properties-0.11.0.tgz#0da784f115ea77c76b81536d7052e90ee6c86a8a"
@@ -5876,6 +7087,11 @@ leven@^2.1.0:
   resolved "http://npm.wpt.la/leven/-/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
   integrity sha1-wuep93IJTe6dNCAq6KzORoeHVYA=
 
+leven@^3.1.0:
+  version "3.1.0"
+  resolved "http://npm.wpt.la/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
+  integrity sha1-d4kd6DQGTMy6gq54QrtrFKE+1/I=
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "http://npm.wpt.la/levn/-/levn-0.4.1.tgz#ae4562c007473b932a6200d403268dd2fffc6ade"
@@ -5883,6 +7099,14 @@ levn@^0.4.1:
   dependencies:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
+
+levn@~0.3.0:
+  version "0.3.0"
+  resolved "http://npm.wpt.la/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
+  integrity sha1-OwmSTt+fCDwEkP3UwLxEIeBHZO4=
+  dependencies:
+    prelude-ls "~1.1.2"
+    type-check "~0.3.2"
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
@@ -6028,7 +7252,7 @@ lodash.zip@^4.2.0:
   resolved "http://npm.wpt.la/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
   integrity sha1-7GZi5IlkCO1KtsVCo5kLcswIACA=
 
-lodash@4.17.21, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.4:
+lodash@4.17.21, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.7.0:
   version "4.17.21"
   resolved "http://npm.wpt.la/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
@@ -6126,6 +7350,13 @@ make-dir@^3.0.0, make-dir@^3.0.2:
   integrity sha1-QV6WcEazp/HRhSd9hKpYIDcmoT8=
   dependencies:
     semver "^6.0.0"
+
+makeerror@1.0.x:
+  version "1.0.11"
+  resolved "http://npm.wpt.la/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
+  integrity sha1-4BpckQnyr3lmDk6LlYd5AYT1qWw=
+  dependencies:
+    tmpl "1.0.x"
 
 map-age-cleaner@^0.1.3:
   version "0.1.3"
@@ -6480,6 +7711,11 @@ natural-compare@^1.4.0:
   resolved "http://npm.wpt.la/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
+node-int64@^0.4.0:
+  version "0.4.0"
+  resolved "http://npm.wpt.la/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
+  integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
+
 node-modules-regexp@^1.0.0:
   version "1.0.0"
   resolved "http://npm.wpt.la/node-modules-regexp/-/node-modules-regexp-1.0.0.tgz#8d9dbe28964a4ac5712e9131642107c71e90ec40"
@@ -6566,7 +7802,7 @@ npm-run-path@^2.0.0:
   dependencies:
     path-key "^2.0.0"
 
-npm-run-path@^4.0.0:
+npm-run-path@^4.0.0, npm-run-path@^4.0.1:
   version "4.0.1"
   resolved "http://npm.wpt.la/npm-run-path/-/npm-run-path-4.0.1.tgz#b7ecd1e5ed53da8e37a55e1c2269e0b97ed748ea"
   integrity sha1-t+zR5e1T2o43pV4cImnguX7XSOo=
@@ -6599,6 +7835,11 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "http://npm.wpt.la/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
+
+nwsapi@^2.2.0:
+  version "2.2.0"
+  resolved "http://npm.wpt.la/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
+  integrity sha1-IEh5qePQaP8qVROcLHcngGgaOLc=
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -6697,12 +7938,24 @@ once@^1.3.0, once@^1.3.1, once@^1.3.2, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-onetime@^5.1.0:
+onetime@^5.1.0, onetime@^5.1.2:
   version "5.1.2"
   resolved "http://npm.wpt.la/onetime/-/onetime-5.1.2.tgz#d0e96ebb56b07476df1dd9c4806e5237985ca45e"
   integrity sha1-0Oluu1awdHbfHdnEgG5SN5hcpF4=
   dependencies:
     mimic-fn "^2.1.0"
+
+optionator@^0.8.1:
+  version "0.8.3"
+  resolved "http://npm.wpt.la/optionator/-/optionator-0.8.3.tgz#84fa1d036fe9d3c7e21d99884b601167ec8fb495"
+  integrity sha1-hPodA2/p08fiHZmIS2ARZ+yPtJU=
+  dependencies:
+    deep-is "~0.1.3"
+    fast-levenshtein "~2.0.6"
+    levn "~0.3.0"
+    prelude-ls "~1.1.2"
+    type-check "~0.3.2"
+    word-wrap "~1.2.3"
 
 optionator@^0.9.1:
   version "0.9.1"
@@ -6759,6 +8012,11 @@ p-defer@^1.0.0:
   version "1.0.0"
   resolved "http://npm.wpt.la/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"
   integrity sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=
+
+p-each-series@^2.1.0:
+  version "2.2.0"
+  resolved "http://npm.wpt.la/p-each-series/-/p-each-series-2.2.0.tgz#105ab0357ce72b202a8a8b94933672657b5e2a9a"
+  integrity sha1-EFqwNXznKyAqiouUkzZyZXteKpo=
 
 p-finally@^1.0.0:
   version "1.0.0"
@@ -6913,6 +8171,11 @@ parse-node-version@^1.0.0:
   resolved "http://npm.wpt.la/parse-node-version/-/parse-node-version-1.0.1.tgz#e2b5dbede00e7fa9bc363607f53327e8b073189b"
   integrity sha1-4rXb7eAOf6m8NjYH9TMn6LBzGJs=
 
+parse5@6.0.1:
+  version "6.0.1"
+  resolved "http://npm.wpt.la/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
+  integrity sha1-4aHAhcVps9wIMhGE8Zo5zCf3wws=
+
 pascalcase@^0.1.1:
   version "0.1.1"
   resolved "http://npm.wpt.la/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
@@ -7002,7 +8265,7 @@ pify@^5.0.0:
   resolved "http://npm.wpt.la/pify/-/pify-5.0.0.tgz#1f5eca3f5e87ebec28cc6d54a0e4aaf00acc127f"
   integrity sha1-H17KP16H6+wozG1UoOSq8ArMEn8=
 
-pirates@^4.0.0:
+pirates@^4.0.0, pirates@^4.0.1:
   version "4.0.1"
   resolved "http://npm.wpt.la/pirates/-/pirates-4.0.1.tgz#643a92caf894566f91b2b986d2c66950a8e2fb87"
   integrity sha1-ZDqSyviUVm+RsrmG0sZpUKji+4c=
@@ -7031,7 +8294,7 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-pkg-dir@^4.1.0:
+pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   version "4.2.0"
   resolved "http://npm.wpt.la/pkg-dir/-/pkg-dir-4.2.0.tgz#f099133df7ede422e81d1d8448270eeb3e4261f3"
   integrity sha1-8JkTPfft5CLoHR2ESCcO6z5CYfM=
@@ -7547,6 +8810,11 @@ prelude-ls@^1.2.1:
   resolved "http://npm.wpt.la/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha1-3rxkidem5rDnYRiIzsiAM30xY5Y=
 
+prelude-ls@~1.1.2:
+  version "1.1.2"
+  resolved "http://npm.wpt.la/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
+  integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
+
 prepend-http@^2.0.0:
   version "2.0.0"
   resolved "http://npm.wpt.la/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
@@ -7559,6 +8827,16 @@ prettier-plugin-style-order@^0.2.2:
   dependencies:
     postcss-sorting "5.0.1"
     resolve-cwd "^3.0.0"
+
+pretty-format@^27.0.6:
+  version "27.0.6"
+  resolved "http://npm.wpt.la/pretty-format/-/pretty-format-27.0.6.tgz#ab770c47b2c6f893a21aefc57b75da63ef49a11f"
+  integrity sha1-q3cMR7LG+JOiGu/Fe3XaY+9JoR8=
+  dependencies:
+    "@jest/types" "^27.0.6"
+    ansi-regex "^5.0.0"
+    ansi-styles "^5.0.0"
+    react-is "^17.0.1"
 
 process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -7589,6 +8867,14 @@ promise@~7.0.1:
   dependencies:
     asap "~2.0.3"
 
+prompts@^2.0.1:
+  version "2.4.1"
+  resolved "http://npm.wpt.la/prompts/-/prompts-2.4.1.tgz#befd3b1195ba052f9fd2fde8a486c4e82ee77f61"
+  integrity sha1-vv07EZW6BS+f0v3opIbE6C7nf2E=
+  dependencies:
+    kleur "^3.0.3"
+    sisteransi "^1.0.5"
+
 prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "http://npm.wpt.la/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
@@ -7608,7 +8894,7 @@ pseudomap@^1.0.2:
   resolved "http://npm.wpt.la/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
-psl@^1.1.28:
+psl@^1.1.28, psl@^1.1.33:
   version "1.8.0"
   resolved "http://npm.wpt.la/psl/-/psl-1.8.0.tgz#9326f8bcfb013adcc005fdff056acce020e51c24"
   integrity sha1-kyb4vPsBOtzABf3/BWrM4CDlHCQ=
@@ -8032,6 +9318,11 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-
   version "16.13.1"
   resolved "http://npm.wpt.la/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
+
+react-is@^17.0.1:
+  version "17.0.2"
+  resolved "http://npm.wpt.la/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
+  integrity sha1-5pHUqOnHiTZWVVOas3J2Kw77VPA=
 
 react-redux@^7.2.4:
   version "7.2.4"
@@ -8573,7 +9864,7 @@ rimraf@2.6.3:
   dependencies:
     glob "^7.1.3"
 
-rimraf@^3.0.2:
+rimraf@^3.0.0, rimraf@^3.0.2:
   version "3.0.2"
   resolved "http://npm.wpt.la/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
   integrity sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=
@@ -8671,7 +9962,7 @@ safe-regex@^2.1.1:
   dependencies:
     regexp-tree "~0.1.1"
 
-safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
+"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
   resolved "http://npm.wpt.la/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
@@ -8680,6 +9971,13 @@ sax@~1.2.4:
   version "1.2.4"
   resolved "http://npm.wpt.la/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
+
+saxes@^5.0.1:
+  version "5.0.1"
+  resolved "http://npm.wpt.la/saxes/-/saxes-5.0.1.tgz#eebab953fa3b7608dbe94e5dadb15c888fa6696d"
+  integrity sha1-7rq5U/o7dgjb6U5drbFciI+maW0=
+  dependencies:
+    xmlchars "^2.2.0"
 
 scroll-into-view-if-needed@^2.2.25:
   version "2.2.28"
@@ -8777,7 +10075,7 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
-signal-exit@^3.0.0, signal-exit@^3.0.2:
+signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.3"
   resolved "http://npm.wpt.la/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
@@ -8797,6 +10095,11 @@ simple-swizzle@^0.2.2:
   integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
   dependencies:
     is-arrayish "^0.3.1"
+
+sisteransi@^1.0.5:
+  version "1.0.5"
+  resolved "http://npm.wpt.la/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
+  integrity sha1-E01oEpd1ZDfMBcoBNw06elcQde0=
 
 slash2@2.0.0:
   version "2.0.0"
@@ -8884,7 +10187,7 @@ source-map-resolve@^0.5.0:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.5.16, source-map-support@~0.5.19:
+source-map-support@^0.5.16, source-map-support@^0.5.6, source-map-support@~0.5.19:
   version "0.5.19"
   resolved "http://npm.wpt.la/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
   integrity sha1-qYti+G3K9PZzmWSMCFKRq56P7WE=
@@ -8902,7 +10205,7 @@ source-map@^0.5.0, source-map@^0.5.1, source-map@^0.5.6, source-map@~0.5.1:
   resolved "http://npm.wpt.la/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
-source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0:
+source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "http://npm.wpt.la/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
@@ -8987,6 +10290,13 @@ stable@^0.1.8:
   resolved "http://npm.wpt.la/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha1-g26zyDgv4pNv6vVEYxAXzn1Ho88=
 
+stack-utils@^2.0.3:
+  version "2.0.3"
+  resolved "http://npm.wpt.la/stack-utils/-/stack-utils-2.0.3.tgz#cd5f030126ff116b78ccb3c027fe302713b61277"
+  integrity sha1-zV8DASb/EWt4zLPAJ/4wJxO2Enc=
+  dependencies:
+    escape-string-regexp "^2.0.0"
+
 state-toggle@^1.0.0:
   version "1.0.3"
   resolved "http://npm.wpt.la/state-toggle/-/state-toggle-1.0.3.tgz#e123b16a88e143139b09c6852221bc9815917dfe"
@@ -9014,6 +10324,14 @@ string-hash@^1.1.1:
   version "1.1.3"
   resolved "http://npm.wpt.la/string-hash/-/string-hash-1.1.3.tgz#e8aafc0ac1855b4666929ed7dd1275df5d6c811b"
   integrity sha1-6Kr8CsGFW0Zmkp7X3RJ1311sgRs=
+
+string-length@^4.0.1:
+  version "4.0.2"
+  resolved "http://npm.wpt.la/string-length/-/string-length-4.0.2.tgz#a8a8dc7bd5c1a82b9b3c8b87e125f66871b6e57a"
+  integrity sha1-qKjce9XBqCubPIuH4SX2aHG25Xo=
+  dependencies:
+    char-regex "^1.0.2"
+    strip-ansi "^6.0.0"
 
 string-width@^1.0.1:
   version "1.0.2"
@@ -9141,6 +10459,11 @@ strip-bom@^3.0.0:
   version "3.0.0"
   resolved "http://npm.wpt.la/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
   integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
+
+strip-bom@^4.0.0:
+  version "4.0.0"
+  resolved "http://npm.wpt.la/strip-bom/-/strip-bom-4.0.0.tgz#9c3505c1db45bcedca3d9cf7a16f5c5aa3901878"
+  integrity sha1-nDUFwdtFvO3KPZz3oW9cWqOQGHg=
 
 strip-eof@^1.0.0:
   version "1.0.0"
@@ -9402,6 +10725,13 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+supports-color@^8.0.0:
+  version "8.1.1"
+  resolved "http://npm.wpt.la/supports-color/-/supports-color-8.1.1.tgz#cd6fc17e28500cff56c1b86c0a7fd4a54a73005c"
+  integrity sha1-zW/BfihQDP9WwbhsCn/UpUpzAFw=
+  dependencies:
+    has-flag "^4.0.0"
+
 supports-hyperlinks@^2.0.0:
   version "2.2.0"
   resolved "http://npm.wpt.la/supports-hyperlinks/-/supports-hyperlinks-2.2.0.tgz#4f77b42488765891774b70c79babd87f9bd594bb"
@@ -9438,6 +10768,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+symbol-tree@^3.2.4:
+  version "3.2.4"
+  resolved "http://npm.wpt.la/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
+  integrity sha1-QwY30ki6d+B4iDlR+5qg7tfGP6I=
 
 table@^5.0.0:
   version "5.4.6"
@@ -9478,6 +10813,14 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
+terminal-link@^2.0.0:
+  version "2.1.1"
+  resolved "http://npm.wpt.la/terminal-link/-/terminal-link-2.1.1.tgz#14a64a27ab3c0df933ea546fba55f2d078edc994"
+  integrity sha1-FKZKJ6s8Dfkz6lRvulXy0HjtyZQ=
+  dependencies:
+    ansi-escapes "^4.2.1"
+    supports-hyperlinks "^2.0.0"
+
 ternary-stream@^2.0.1:
   version "2.1.1"
   resolved "http://npm.wpt.la/ternary-stream/-/ternary-stream-2.1.1.tgz#4ad64b98668d796a085af2c493885a435a8a8bfc"
@@ -9507,10 +10850,24 @@ test-exclude@^5.2.3:
     read-pkg-up "^4.0.0"
     require-main-filename "^2.0.0"
 
+test-exclude@^6.0.0:
+  version "6.0.0"
+  resolved "http://npm.wpt.la/test-exclude/-/test-exclude-6.0.0.tgz#04a8698661d805ea6fa293b6cb9e63ac044ef15e"
+  integrity sha1-BKhphmHYBepvopO2y55jrARO8V4=
+  dependencies:
+    "@istanbuljs/schema" "^0.1.2"
+    glob "^7.1.4"
+    minimatch "^3.0.4"
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "http://npm.wpt.la/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+
+throat@^6.0.1:
+  version "6.0.1"
+  resolved "http://npm.wpt.la/throat/-/throat-6.0.1.tgz#d514fedad95740c12c2d7fc70ea863eb51ade375"
+  integrity sha1-1RT+2tlXQMEsLX/HDqhj61Gt43U=
 
 through2-filter@^3.0.0:
   version "3.0.0"
@@ -9578,6 +10935,11 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.3:
   resolved "http://npm.wpt.la/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
 
+tmpl@1.0.x:
+  version "1.0.4"
+  resolved "http://npm.wpt.la/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
+  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+
 to-absolute-glob@^2.0.0:
   version "2.0.2"
   resolved "http://npm.wpt.la/to-absolute-glob/-/to-absolute-glob-2.0.2.tgz#1865f43d9e74b0822db9f145b78cff7d0f7c849b"
@@ -9640,12 +11002,28 @@ toggle-selection@^1.0.6:
   resolved "http://npm.wpt.la/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
   integrity sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
 
+tough-cookie@^4.0.0:
+  version "4.0.0"
+  resolved "http://npm.wpt.la/tough-cookie/-/tough-cookie-4.0.0.tgz#d822234eeca882f991f0f908824ad2622ddbece4"
+  integrity sha1-2CIjTuyogvmR8PkIgkrSYi3b7OQ=
+  dependencies:
+    psl "^1.1.33"
+    punycode "^2.1.1"
+    universalify "^0.1.2"
+
 tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "http://npm.wpt.la/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
   integrity sha1-zZ+yoKodWhK0c72fuW+j3P9lreI=
   dependencies:
     psl "^1.1.28"
+    punycode "^2.1.1"
+
+tr46@^2.1.0:
+  version "2.1.0"
+  resolved "http://npm.wpt.la/tr46/-/tr46-2.1.0.tgz#fa87aa81ca5d5941da8cbf1f9b749dc969a4e240"
+  integrity sha1-+oeqgcpdWUHajL8fm3SdyWmk4kA=
+  dependencies:
     punycode "^2.1.1"
 
 trim-newlines@^2.0.0:
@@ -9703,7 +11081,7 @@ tslib@^1.10.0, tslib@^1.8.1:
   resolved "http://npm.wpt.la/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
 
-tsutils@^3.21.0:
+tsutils@^3.17.1, tsutils@^3.21.0:
   version "3.21.0"
   resolved "http://npm.wpt.la/tsutils/-/tsutils-3.21.0.tgz#b48717d394cea6c1e096983eed58e9d61715b623"
   integrity sha1-tIcX05TOpsHglpg+7Vjp1hcVtiM=
@@ -9728,6 +11106,18 @@ type-check@^0.4.0, type-check@~0.4.0:
   integrity sha1-B7ggO/pwVsBlcFDjzNLDdzC6uPE=
   dependencies:
     prelude-ls "^1.2.1"
+
+type-check@~0.3.2:
+  version "0.3.2"
+  resolved "http://npm.wpt.la/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
+  integrity sha1-WITKtRLPHTVeP7eE8wgEsrUg23I=
+  dependencies:
+    prelude-ls "~1.1.2"
+
+type-detect@4.0.8:
+  version "4.0.8"
+  resolved "http://npm.wpt.la/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
+  integrity sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=
 
 type-fest@^0.18.0:
   version "0.18.1"
@@ -9969,7 +11359,7 @@ unist-util-visit@^1.1.0:
   dependencies:
     unist-util-visit-parents "^2.0.0"
 
-universalify@^0.1.0:
+universalify@^0.1.0, universalify@^0.1.2:
   version "0.1.2"
   resolved "http://npm.wpt.la/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha1-tkb2m+OULavOzJ1mOcgNwQXvqmY=
@@ -10053,6 +11443,15 @@ v8-compile-cache@^2.0.3, v8-compile-cache@^2.3.0:
   version "2.3.0"
   resolved "http://npm.wpt.la/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha1-LeGWGMZtwkfc+2+ZM4A12CRaLO4=
+
+v8-to-istanbul@^8.0.0:
+  version "8.0.0"
+  resolved "http://npm.wpt.la/v8-to-istanbul/-/v8-to-istanbul-8.0.0.tgz#4229f2a99e367f3f018fa1d5c2b8ec684667c69c"
+  integrity sha1-QinyqZ42fz8Bj6HVwrjsaEZnxpw=
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.1"
+    convert-source-map "^1.6.0"
+    source-map "^0.7.3"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
@@ -10206,12 +11605,64 @@ vinyl@^2.0.0, vinyl@^2.1.0:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
+w3c-hr-time@^1.0.2:
+  version "1.0.2"
+  resolved "http://npm.wpt.la/w3c-hr-time/-/w3c-hr-time-1.0.2.tgz#0a89cdf5cc15822df9c360543676963e0cc308cd"
+  integrity sha1-ConN9cwVgi35w2BUNnaWPgzDCM0=
+  dependencies:
+    browser-process-hrtime "^1.0.0"
+
+w3c-xmlserializer@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm.wpt.la/w3c-xmlserializer/-/w3c-xmlserializer-2.0.0.tgz#3e7104a05b75146cc60f564380b7f683acf1020a"
+  integrity sha1-PnEEoFt1FGzGD1ZDgLf2g6zxAgo=
+  dependencies:
+    xml-name-validator "^3.0.0"
+
+walker@^1.0.7:
+  version "1.0.7"
+  resolved "http://npm.wpt.la/walker/-/walker-1.0.7.tgz#2f7f9b8fd10d677262b18a884e28d19618e028fb"
+  integrity sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
+  dependencies:
+    makeerror "1.0.x"
+
 warning@^4.0.1, warning@^4.0.3:
   version "4.0.3"
   resolved "http://npm.wpt.la/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha1-Fungd+uKhtavfWSqHgX9hbRnjKM=
   dependencies:
     loose-envify "^1.0.0"
+
+webidl-conversions@^5.0.0:
+  version "5.0.0"
+  resolved "http://npm.wpt.la/webidl-conversions/-/webidl-conversions-5.0.0.tgz#ae59c8a00b121543a2acc65c0434f57b0fc11aff"
+  integrity sha1-rlnIoAsSFUOirMZcBDT1ew/BGv8=
+
+webidl-conversions@^6.1.0:
+  version "6.1.0"
+  resolved "http://npm.wpt.la/webidl-conversions/-/webidl-conversions-6.1.0.tgz#9111b4d7ea80acd40f5270d666621afa78b69514"
+  integrity sha1-kRG01+qArNQPUnDWZmIa+ni2lRQ=
+
+whatwg-encoding@^1.0.5:
+  version "1.0.5"
+  resolved "http://npm.wpt.la/whatwg-encoding/-/whatwg-encoding-1.0.5.tgz#5abacf777c32166a51d085d6b4f3e7d27113ddb0"
+  integrity sha1-WrrPd3wyFmpR0IXWtPPn0nET3bA=
+  dependencies:
+    iconv-lite "0.4.24"
+
+whatwg-mimetype@^2.3.0:
+  version "2.3.0"
+  resolved "http://npm.wpt.la/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz#3d4b1e0312d2079879f826aff18dbeeca5960fbf"
+  integrity sha1-PUseAxLSB5h5+Cav8Y2+7KWWD78=
+
+whatwg-url@^8.0.0, whatwg-url@^8.5.0:
+  version "8.7.0"
+  resolved "http://npm.wpt.la/whatwg-url/-/whatwg-url-8.7.0.tgz#656a78e510ff8f3937bc0bcbe9f5c0ac35941b77"
+  integrity sha1-ZWp45RD/jzk3vAvL6fXArDWUG3c=
+  dependencies:
+    lodash "^4.7.0"
+    tr46 "^2.1.0"
+    webidl-conversions "^6.1.0"
 
 when@^3.7.8:
   version "3.7.8"
@@ -10262,7 +11713,7 @@ window-size@0.1.0:
   resolved "http://npm.wpt.la/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
   integrity sha1-VDjNLqk7IC76Ohn+iIeu58lPnJ0=
 
-word-wrap@^1.2.3:
+word-wrap@^1.2.3, word-wrap@~1.2.3:
   version "1.2.3"
   resolved "http://npm.wpt.la/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
   integrity sha1-YQY29rH3A4kb00dxzLF/uTtHB5w=
@@ -10295,7 +11746,7 @@ write-file-atomic@^2.0.0, write-file-atomic@^2.4.2:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.2"
 
-write-file-atomic@^3.0.3:
+write-file-atomic@^3.0.0, write-file-atomic@^3.0.3:
   version "3.0.3"
   resolved "http://npm.wpt.la/write-file-atomic/-/write-file-atomic-3.0.3.tgz#56bd5c5a5c70481cd19c571bd39ab965a5de56e8"
   integrity sha1-Vr1cWlxwSBzRnFcb05q5ZaXeVug=
@@ -10344,6 +11795,11 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
+ws@^7.4.6:
+  version "7.5.3"
+  resolved "http://npm.wpt.la/ws/-/ws-7.5.3.tgz#160835b63c7d97bfab418fc1b8a9fced2ac01a74"
+  integrity sha1-Fgg1tjx9l7+rQY/BuKn87SrAGnQ=
+
 x-is-string@^0.1.0:
   version "0.1.0"
   resolved "http://npm.wpt.la/x-is-string/-/x-is-string-0.1.0.tgz#474b50865af3a49a9c4657f05acd145458f77d82"
@@ -10353,6 +11809,16 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "http://npm.wpt.la/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
   integrity sha1-SWsswQnsqNus/i3HK2A8F8WHCtQ=
+
+xml-name-validator@^3.0.0:
+  version "3.0.0"
+  resolved "http://npm.wpt.la/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
+  integrity sha1-auc+Bt5NjG5H+fsYH3jWSK1FfGo=
+
+xmlchars@^2.2.0:
+  version "2.2.0"
+  resolved "http://npm.wpt.la/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
+  integrity sha1-Bg/hvLf5x2/ioX24apvDq4lCEMs=
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.2"
@@ -10399,7 +11865,7 @@ yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   resolved "http://npm.wpt.la/yargs-parser/-/yargs-parser-20.2.9.tgz#2eb7dc3b0289718fc295f362753845c41a0c94ee"
   integrity sha1-LrfcOwKJcY/ClfNidThFxBoMlO4=
 
-yargs@^16.2.0:
+yargs@^16.0.3, yargs@^16.2.0:
   version "16.2.0"
   resolved "http://npm.wpt.la/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
   integrity sha1-HIK/D2tqZur85+8w43b0mhJHf2Y=

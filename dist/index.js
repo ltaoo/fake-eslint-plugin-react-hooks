@@ -1168,6 +1168,12 @@ var ExhaustiveDeps = {
               return true;
             }
           }
+        } else if (['useCallback', 'useMemo'].includes(name)) {
+          var deps = init.arguments[1];
+
+          if (deps.type === 'ArrayExpression' && deps.elements.length === 0) {
+            return true;
+          }
         } // By default assume it's dynamic.
 
 
